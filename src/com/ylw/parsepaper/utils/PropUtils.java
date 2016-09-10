@@ -92,7 +92,7 @@ public class PropUtils {
 				new File(fullPath).createNewFile();
 			}
 			out = new FileOutputStream(fullPath);
-			String comments = "程序的配置文件";
+			String comments = "程序的配置文件!";
 			properties.storeToXML(out, comments, "UTF-8");
 		} catch (IOException e) {
 			log.error(e.getMessage(), e);
