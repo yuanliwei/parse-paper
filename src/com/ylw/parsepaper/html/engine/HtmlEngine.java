@@ -12,6 +12,17 @@ public class HtmlEngine {
 
 	public List<HtmlElement> parse(String html) {
 		// TODO Auto-generated method stub
+		log.debug("======================\n" + html + "\n------------------------------------");
+
+		List<String> tagHtmls = HtmlElement.splitTag(html);
+		HtmlElement root = new HtmlElement();
+		root.name = "root";
+
+		for (int i = 0; i < tagHtmls.size(); i++) {
+			HtmlElement htmlElement = new HtmlElement();
+			htmlElement.parse(html);
+			root.childs.add(htmlElement);
+		}
 		return null;
 	}
 

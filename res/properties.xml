@@ -4,5 +4,6 @@
 <comment>程序的配置文件</comment>
 <entry key="234">afddsf</entry>
 <entry key="shuzi">123</entry>
+<entry key="test_html_path">C:\\Users\\ylw\\Desktop\\挑战项目\\doc文件\\Microsoft_Office_Word_97_-_2003___1.html</entry>
 <entry key="db_path">jdbc:sqlite:E:/java/gen_logs/parse-paper.db</entry>
 </properties>

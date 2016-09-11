@@ -10,9 +10,12 @@ import com.ylw.parsepaper.html.engine.HtmlEngine;
 import com.ylw.parsepaper.html.engine.StyleEngine;
 import com.ylw.parsepaper.html.model.HtmlElement;
 import com.ylw.parsepaper.html.model.StyleElement;
+import com.ylw.parsepaper.utils.CacheUtil;
 
 public class ParseHtml {
 	private static Log log = LogFactory.getLog(ParseHtml.class);
+	private Map<String, StyleElement> styleElements;
+	private List<HtmlElement> htmlElements;
 
 	/**
 	 * 解析html
@@ -25,12 +28,12 @@ public class ParseHtml {
 		// 解析出style标签中的文本
 		String style = getStyleText(html);
 		StyleEngine styleEngine = new StyleEngine();
-		Map<String, StyleElement> styleElements = styleEngine.parse(style);
+		styleElements = styleEngine.parse(style);
 
 		// 解析出body中的文本
 		String body = getBodyText(html);
 		HtmlEngine htmlEngine = new HtmlEngine();
-		List<HtmlElement> htmlElements = htmlEngine.parse(html);
+		htmlElements = htmlEngine.parse(body);
 		return null;
 	}
 
@@ -59,5 +62,23 @@ public class ParseHtml {
 		String result = html.substring(start, end);
 		return result;
 	}
+
+	public Map<String, StyleElement> getStyleElements() {
+		return styleElements;
+	}
+
+	public void setStyleElements(Map<String, StyleElement> styleElements) {
+		this.styleElements = styleElements;
+	}
+
+	public List<HtmlElement> getHtmlElements() {
+		return htmlElements;
+	}
+
+	public void setHtmlElements(List<HtmlElement> htmlElements) {
+		this.htmlElements = htmlElements;
+	}
+	
+	
 
 }

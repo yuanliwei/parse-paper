@@ -10,8 +10,8 @@ import org.apache.http.util.TextUtils;
 public class StyleElement {
 	private static Log log = LogFactory.getLog(StyleElement.class);
 
-	String name;
-	Map<String, String> attrs = new HashMap<>();
+	public String name;
+	public Map<String, String> attrs = new HashMap<>();
 
 	public String getName() {
 		return name;
@@ -34,7 +34,6 @@ public class StyleElement {
 	 * @param string
 	 */
 	public void parseString(String string) {
-		// TODO Auto-generated method stub
 		// log.debug(string);
 		String[] ss = string.split("\\{");
 		if (ss.length != 2 || TextUtils.isBlank(ss[0]) || TextUtils.isBlank(ss[1])) {

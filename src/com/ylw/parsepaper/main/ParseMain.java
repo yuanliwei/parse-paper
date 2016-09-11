@@ -16,7 +16,7 @@ public class ParseMain {
 		PropUtils.load();
 		CacheUtil.initCache();
 
-		String htmlPath = "C:\\Users\\ylw\\Desktop\\挑战项目\\doc文件\\Microsoft_Office_Word_97_-_2003___1.html";
+		String htmlPath = PropUtils.get("test_html_path");
 		String html = FileUtil.getString(htmlPath);
 		log.debug(html);
 		ParseHtml parseHtml = new ParseHtml();
