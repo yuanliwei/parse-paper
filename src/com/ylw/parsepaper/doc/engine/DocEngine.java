@@ -66,6 +66,12 @@ public class DocEngine {
 						picName = suggestedName;
 						log.error(e.getMessage(), e);
 					}
+//					try {
+//						Picture picture = new Picture(0, content, true);
+//						picture.writeImageContent(new FileOutputStream(picPath + suggestedName));
+//					} catch (IOException e) {
+//						log.error(e.getMessage(), e);
+//					}
 					return imgSrcPath + picName;
 				} else {
 					Picture picture = new Picture(0, content, true);
