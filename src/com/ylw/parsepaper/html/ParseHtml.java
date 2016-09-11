@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.ylw.parsepaper.html.engine.DomEngine;
 import com.ylw.parsepaper.html.engine.HtmlEngine;
 import com.ylw.parsepaper.html.engine.StyleEngine;
 import com.ylw.parsepaper.html.model.HtmlElement;
@@ -32,6 +33,9 @@ public class ParseHtml {
 
 		// 解析出body中的文本
 		String body = getBodyText(html);
+		DomEngine domEngine = new DomEngine();
+		List<HtmlElement> treeHtmlElements = domEngine.parse(body);
+		
 		HtmlEngine htmlEngine = new HtmlEngine();
 		htmlElements = htmlEngine.parse(body);
 		return null;
