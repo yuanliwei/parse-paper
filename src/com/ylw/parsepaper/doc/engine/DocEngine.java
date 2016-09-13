@@ -28,6 +28,7 @@ import org.apache.poi.hwpf.converter.PicturesManager;
 import org.apache.poi.hwpf.converter.WordToHtmlConverter;
 import org.apache.poi.hwpf.usermodel.Picture;
 import org.apache.poi.hwpf.usermodel.PictureType;
+import org.w3c.dom.svg.SVGDocument;
 
 public class DocEngine {
 	private static Log log = LogFactory.getLog(DocEngine.class);
