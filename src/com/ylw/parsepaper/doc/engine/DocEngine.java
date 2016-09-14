@@ -28,7 +28,9 @@ import org.apache.poi.hwpf.converter.PicturesManager;
 import org.apache.poi.hwpf.converter.WordToHtmlConverter;
 import org.apache.poi.hwpf.usermodel.Picture;
 import org.apache.poi.hwpf.usermodel.PictureType;
- 
+
+import org.w3c.dom.svg.SVGDocument;
+
 public class DocEngine {
 	private static Log log = LogFactory.getLog(DocEngine.class);
 
@@ -66,6 +68,12 @@ public class DocEngine {
 						picName = suggestedName;
 						log.error(e.getMessage(), e);
 					}
+//					try {
+//						Picture picture = new Picture(0, content, true);
+//						picture.writeImageContent(new FileOutputStream(picPath + suggestedName));
+//					} catch (IOException e) {
+//						log.error(e.getMessage(), e);
+//					}
 					return imgSrcPath + picName;
 				} else {
 					Picture picture = new Picture(0, content, true);
