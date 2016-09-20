@@ -40,8 +40,8 @@ public class WMFTranscoderTest {
 		OutputStream stream = new FileOutputStream(outputFile);
 		TranscoderOutput output = new TranscoderOutput(stream);
 		WMFTranscoder transcoder = new WMFTranscoder();
-		transcoder.addTranscodingHint(WMFTranscoder.KEY_ESCAPED, true);
-		transcoder.addTranscodingHint(WMFTranscoder.KEY_WIDTH, new Float(4000));
+//		transcoder.addTranscodingHint(WMFTranscoder.KEY_ESCAPED, true);
+//		transcoder.addTranscodingHint(WMFTranscoder.KEY_WIDTH, new Float(4000));
 		try {
 			transcoder.transcode(input, output);
 		} catch (TranscoderException e) {

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill-rule="evenodd" height="640" preserveAspectRatio="none" stroke-linecap="round" viewBox="0 0 4576 640" width="4576">
+<style type="text/css">
+.brush0 { fill: rgb(255,255,255); }
+.pen0 { stroke: rgb(0,0,0); stroke-width: 1; stroke-linejoin: round; }
+.font0 { font-size: 413px; font-family: Symbol, serif; }
+.pen1 { stroke: rgb(0,0,0); stroke-width: 16; stroke-linejoin: round; }
+.font1 { font-size: 516px; font-family: Symbol, serif; }
+.font2 { font-style: italic; font-size: 346px; font-family: "Times New Roman", serif; }
+.font3 { font-size: 313px; font-family: Symbol, serif; }
+.font4 { font-size: 346px; font-family: "Times New Roman", serif; }
+.font5 { font-size: 173px; font-family: "Times New Roman", serif; }
+.font6 { font-size: 384px; font-family: 宋体-PUA; }
+.font7 { font-weight: bold; font-size: 16px; font-family: System, sans-serif; }
+</style>
+<g>
+<text class="font0" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="51" xml:lang="en" xml:space="preserve" y="414">(</text>
+<text class="font0" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1071" xml:lang="en" xml:space="preserve" y="414">)</text>
+<line class="pen1" fill="none" x1="1957" x2="1957" y1="65" y2="575"/>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1600" xml:lang="en" xml:space="preserve" y="413">{</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="4396" xml:lang="en" xml:space="preserve" y="413">}</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="4205" xml:lang="en" xml:space="preserve" y="416">a</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="3491" xml:lang="en" xml:space="preserve" y="416">ax</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2621" xml:lang="en" xml:space="preserve" y="416">x</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2033" xml:lang="en" xml:space="preserve" y="416">y</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1751" xml:lang="en" xml:space="preserve" y="416">y</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="3923" xml:lang="en" xml:space="preserve" y="416">+</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="3017" xml:lang="en" xml:space="preserve" y="416">-</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2303" xml:lang="en" xml:space="preserve" y="416">=</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1249" xml:lang="en" xml:space="preserve" y="416">Í</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="777" xml:lang="en" xml:space="preserve" y="416">¥</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="501" xml:lang="en" xml:space="preserve" y="416">+</text>
+<text class="font4" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="3293" xml:lang="en" xml:space="preserve" y="416">2</text>
+<text class="font4" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="165" xml:lang="en" xml:space="preserve" y="416">0</text>
+<text class="font5" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2816" xml:lang="en" xml:space="preserve" y="244">2</text>
+<text class="font6" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="327" xml:lang="zh-CN" xml:space="preserve" y="416">，</text>
+</g>
+</svg>

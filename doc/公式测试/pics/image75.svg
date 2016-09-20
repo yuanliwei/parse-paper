@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill-rule="evenodd" height="992" preserveAspectRatio="none" stroke-linecap="round" viewBox="0 0 5952 992" width="5952">
+<style type="text/css">
+.brush0 { fill: rgb(255,255,255); }
+.pen0 { stroke: rgb(0,0,0); stroke-width: 1; stroke-linejoin: round; }
+.pen1 { stroke: rgb(0,0,0); stroke-width: 16; stroke-linejoin: round; }
+.font0 { font-style: italic; font-size: 346px; font-family: "Times New Roman", serif; }
+.font1 { font-size: 346px; font-family: "Times New Roman", serif; }
+.font2 { font-size: 313px; font-family: Symbol, serif; }
+.font3 { font-style: italic; font-size: 313px; font-family: Symbol, serif; }
+.font4 { font-size: 384px; font-family: 宋体-PUA; }
+.font5 { font-weight: bold; font-size: 16px; font-family: System, sans-serif; }
+</style>
+<g>
+<line class="pen1" fill="none" x1="1786" x2="2750" y1="512" y2="512"/>
+<line class="pen1" fill="none" x1="4898" x2="5868" y1="512" y2="512"/>
+<text class="font0" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="5635" xml:lang="en" xml:space="preserve" y="908">x</text>
+<text class="font0" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="5674" xml:lang="en" xml:space="preserve" y="366">x</text>
+<text class="font0" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2523" xml:lang="en" xml:space="preserve" y="908">x</text>
+<text class="font0" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2556" xml:lang="en" xml:space="preserve" y="366">x</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="5419" xml:lang="en" xml:space="preserve" y="908">4</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="4921" xml:lang="en" xml:space="preserve" y="908">1</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="5458" xml:lang="en" xml:space="preserve" y="366">2</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="4924" xml:lang="en" xml:space="preserve" y="366">2</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="4358" xml:lang="en" xml:space="preserve" y="608">tan</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="3806" xml:lang="en" xml:space="preserve" y="608">arg</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2307" xml:lang="en" xml:space="preserve" y="908">4</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1803" xml:lang="en" xml:space="preserve" y="908">1</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2340" xml:lang="en" xml:space="preserve" y="366">2</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1812" xml:lang="en" xml:space="preserve" y="366">2</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1246" xml:lang="en" xml:space="preserve" y="608">tan</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="694" xml:lang="en" xml:space="preserve" y="608">arg</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="5143" xml:lang="en" xml:space="preserve" y="908">-</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="5176" xml:lang="en" xml:space="preserve" y="366">+</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="3512" xml:lang="en" xml:space="preserve" y="608">=</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2025" xml:lang="en" xml:space="preserve" y="908">+</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2064" xml:lang="en" xml:space="preserve" y="366">-</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="400" xml:lang="en" xml:space="preserve" y="608">=</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="3164" xml:lang="en" xml:space="preserve" y="608">b</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="28" xml:lang="en" xml:space="preserve" y="608">a</text>
+<text class="font4" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2780" xml:lang="zh-CN" xml:space="preserve" y="608">，</text>
+</g>
+</svg>

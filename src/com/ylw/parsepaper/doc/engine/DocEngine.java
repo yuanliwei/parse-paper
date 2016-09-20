@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -17,10 +18,6 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import org.apache.batik.transcoder.TranscoderException;
-import org.apache.batik.transcoder.TranscoderInput;
-import org.apache.batik.transcoder.TranscoderOutput;
-import org.apache.batik.transcoder.wmf.tosvg.WMFTranscoder;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.poi.hwpf.HWPFDocument;
@@ -28,7 +25,8 @@ import org.apache.poi.hwpf.converter.PicturesManager;
 import org.apache.poi.hwpf.converter.WordToHtmlConverter;
 import org.apache.poi.hwpf.usermodel.Picture;
 import org.apache.poi.hwpf.usermodel.PictureType;
-import org.w3c.dom.svg.SVGDocument;
+
+import com.alibaba.fastjson.util.IOUtils;
 
 public class DocEngine {
 	private static Log log = LogFactory.getLog(DocEngine.class);
@@ -50,29 +48,28 @@ public class DocEngine {
 		WordToHtmlConverter wordToHtmlConverter = new WordToHtmlConverter(
 				DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument());
 		wordToHtmlConverter.setPicturesManager(new PicturesManager() {
+			int i = 0;
 			public String savePicture(byte[] content, PictureType pictureType, String suggestedName, float widthInches,
 					float heightInches) {
 				if (pictureType == PictureType.WMF) {
-					String picName = suggestedName.substring(0, suggestedName.lastIndexOf(".")) + ".svg";
+					String picName = suggestedName.substring(0, suggestedName.lastIndexOf(".")) + ".png";
+					picName = "image" + i++ + ".svg";
 					try {
 						OutputStream stream = new FileOutputStream(picPath + picName);
-						TranscoderOutput output = new TranscoderOutput(stream);
-						WMFTranscoder transcoder = new WMFTranscoder();
-						transcoder.addTranscodingHint(WMFTranscoder.KEY_ESCAPED, true);
-						transcoder.addTranscodingHint(WMFTranscoder.KEY_WIDTH, new Float(widthInches * 1000));
-						transcoder.addTranscodingHint(WMFTranscoder.KEY_HEIGHT, new Float(heightInches * 1000));
-						TranscoderInput input = new TranscoderInput(new ByteArrayInputStream(content));
-						transcoder.transcode(input, output);
-					} catch (TranscoderException | FileNotFoundException e) {
+						InputStream inputStream = new ByteArrayInputStream(content);
+						ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+						Wmf2svg.parse(inputStream, outputStream);
+						ByteArrayOutputStream outputStream1 = new ByteArrayOutputStream();
+						Wmf2svg.handleWidthHeight(new ByteArrayInputStream(outputStream.toByteArray()), outputStream1);
+						Wmf2svg.svgToPng(new ByteArrayInputStream(outputStream1.toByteArray()), stream);
+						IOUtils.close(stream);
+						IOUtils.close(inputStream);
+						IOUtils.close(outputStream1);
+					} catch (FileNotFoundException e) {
 						picName = suggestedName;
 						log.error(e.getMessage(), e);
 					}
-//					try {
-//						Picture picture = new Picture(0, content, true);
-//						picture.writeImageContent(new FileOutputStream(picPath + suggestedName));
-//					} catch (IOException e) {
-//						log.error(e.getMessage(), e);
-//					}
+
 					return imgSrcPath + picName;
 				} else {
 					Picture picture = new Picture(0, content, true);

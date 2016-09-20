@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill-rule="evenodd" height="1632" preserveAspectRatio="none" stroke-linecap="round" viewBox="0 0 2720 1632" width="2720">
+<style type="text/css">
+.brush0 { fill: rgb(255,255,255); }
+.pen0 { stroke: rgb(0,0,0); stroke-width: 1; stroke-linejoin: round; }
+.pen1 { stroke: rgb(0,0,0); stroke-width: 1; stroke-linejoin: round; }
+.brush1 { fill: rgb(0,0,0); }
+.pen2 { stroke: none; }
+.font0 { font-size: 512px; font-family: Symbol, serif; }
+.pen3 { stroke: rgb(0,0,0); stroke-width: 17; stroke-linejoin: round; }
+.font1 { font-size: 184px; font-family: "Times New Roman", serif; }
+.font2 { font-size: 317px; font-family: "Times New Roman", serif; }
+.font3 { font-style: italic; font-size: 184px; font-family: "Times New Roman", serif; }
+.font4 { font-style: italic; font-size: 317px; font-family: "Times New Roman", serif; }
+.font5 { font-size: 166px; font-family: Symbol, serif; }
+.font6 { font-size: 287px; font-family: Symbol, serif; }
+.font7 { font-size: 430px; font-family: Symbol, serif; }
+.brush2 { fill: rgb(0,0,0); }
+.font8 { font-weight: bold; font-size: 16px; font-family: System, sans-serif; }
+</style>
+<g>
+<line class="pen1" fill="none" x1="1149" x2="1184" y1="326" y2="306"/>
+<line class="pen1" fill="none" x1="1184" x2="1271" y1="306" y2="445"/>
+<line class="pen1" fill="none" x1="1271" x2="1364" y1="445" y2="80"/>
+<line class="pen1" fill="none" x1="1364" x2="1568" y1="80" y2="80"/>
+<polygon class="pen2 brush1" points="1147,322 1194,296 1271,413 1358,72 1568,72 1568,89 1370,89 1280,445 1263,445 1175,317 1152,331"/>
+<line class="pen1" fill="none" x1="1381" x2="1416" y1="1102" y2="1082"/>
+<line class="pen1" fill="none" x1="1416" x2="1503" y1="1082" y2="1221"/>
+<line class="pen1" fill="none" x1="1503" x2="1596" y1="1221" y2="856"/>
+<line class="pen1" fill="none" x1="1596" x2="1800" y1="856" y2="856"/>
+<polygon class="pen2 brush1" points="1379,1098 1426,1072 1503,1189 1590,848 1800,848 1800,865 1602,865 1512,1221 1495,1221 1407,1093 1384,1107"/>
+<text class="font0" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1229" xml:space="preserve" y="1256">(</text>
+<text class="font0" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2483" xml:space="preserve" y="1256">)</text>
+<line class="pen1" fill="none" x1="546" x2="579" y1="1248" y2="1199"/>
+<line class="pen1" fill="none" x1="579" x2="666" y1="1199" y2="1562"/>
+<line class="pen1" fill="none" x1="666" x2="760" y1="1562" y2="608"/>
+<line class="pen1" fill="none" x1="760" x2="2610" y1="608" y2="608"/>
+<polygon class="pen2 brush1" points="542,1245 589,1178 666,1480 753,600 2610,600 2610,617 768,617 675,1562 658,1562 570,1221 551,1251"/>
+<line class="pen3" fill="none" x1="514" x2="2638" y1="552" y2="552"/>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1055" xml:lang="en" xml:space="preserve" y="1531">1</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1381 1874" xml:lang="en" xml:space="preserve" y="417">21</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="20" xml:lang="en" xml:space="preserve" y="640">1</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1613" xml:lang="en" xml:space="preserve" y="1193">2</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="934" xml:lang="en" xml:space="preserve" y="831">n</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="563" xml:lang="en" xml:space="preserve" y="1156">n</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2314" xml:lang="en" xml:space="preserve" y="1283">k</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="832" xml:lang="en" xml:space="preserve" y="1531">k</text>
+<text class="font4" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2161" xml:lang="en" xml:space="preserve" y="1193">x</text>
+<text class="font5" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="951" xml:space="preserve" y="1531">=</text>
+<text class="font6" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1647" xml:space="preserve" y="417">+</text>
+<text class="font6" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="237" xml:space="preserve" y="640">³</text>
+<text class="font6" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1879" xml:space="preserve" y="1193">+</text>
+<text class="font7" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="765" xml:space="preserve" y="1278">Õ</text>
+</g>
+</svg>

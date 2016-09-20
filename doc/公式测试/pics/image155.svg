@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill-rule="evenodd" height="2176" preserveAspectRatio="none" stroke-linecap="round" viewBox="0 0 6464 2176" width="6464">
+<style type="text/css">
+.brush0 { fill: rgb(255,255,255); }
+.pen0 { stroke: rgb(0,0,0); stroke-width: 1; stroke-linejoin: round; }
+.pen1 { stroke: rgb(0,0,0); stroke-width: 1; stroke-linejoin: round; }
+.brush1 { fill: rgb(0,0,0); }
+.pen2 { stroke: none; }
+.pen3 { stroke: rgb(0,0,0); stroke-width: 8; stroke-linejoin: round; }
+.pen4 { stroke: rgb(0,0,0); stroke-width: 17; stroke-linejoin: round; }
+.font0 { font-size: 512px; font-family: Symbol, serif; }
+.font1 { font-size: 184px; font-family: "Times New Roman", serif; }
+.font2 { font-size: 317px; font-family: "Times New Roman", serif; }
+.font3 { font-style: italic; font-size: 184px; font-family: "Times New Roman", serif; }
+.font4 { font-style: italic; font-size: 317px; font-family: "Times New Roman", serif; }
+.font5 { font-size: 166px; font-family: Symbol, serif; }
+.font6 { font-size: 287px; font-family: Symbol, serif; }
+.font7 { font-size: 430px; font-family: Symbol, serif; }
+.brush2 { fill: rgb(0,0,0); }
+.font8 { font-weight: bold; font-size: 16px; font-family: System, sans-serif; }
+</style>
+<g>
+<line class="pen1" fill="none" x1="861" x2="896" y1="348" y2="328"/>
+<line class="pen1" fill="none" x1="896" x2="983" y1="328" y2="467"/>
+<line class="pen1" fill="none" x1="983" x2="1076" y1="467" y2="102"/>
+<line class="pen1" fill="none" x1="1076" x2="1280" y1="102" y2="102"/>
+<polygon class="pen2 brush1" points="859,344 906,318 983,435 1070,94 1280,94 1280,111 1082,111 992,467 975,467 887,339 864,353"/>
+<line class="pen1" fill="none" x1="537" x2="572" y1="864" y2="844"/>
+<line class="pen1" fill="none" x1="572" x2="659" y1="844" y2="983"/>
+<line class="pen1" fill="none" x1="659" x2="752" y1="983" y2="618"/>
+<line class="pen1" fill="none" x1="752" x2="956" y1="618" y2="618"/>
+<polygon class="pen2 brush1" points="535,860 582,834 659,951 746,610 956,610 956,627 758,627 668,983 651,983 563,855 540,869"/>
+<line class="pen3" fill="none" x1="507" x2="1632" y1="568" y2="568"/>
+<line class="pen4" fill="none" x1="64" x2="1660" y1="1096" y2="1096"/>
+<line class="pen1" fill="none" x1="3079" x2="3114" y1="870" y2="850"/>
+<line class="pen1" fill="none" x1="3114" x2="3201" y1="850" y2="989"/>
+<line class="pen1" fill="none" x1="3201" x2="3294" y1="989" y2="624"/>
+<line class="pen1" fill="none" x1="3294" x2="3498" y1="624" y2="624"/>
+<polygon class="pen2 brush1" points="3077,866 3124,840 3201,957 3288,616 3498,616 3498,633 3300,633 3210,989 3193,989 3105,861 3082,875"/>
+<line class="pen1" fill="none" x1="2755" x2="2790" y1="1398" y2="1378"/>
+<line class="pen1" fill="none" x1="2790" x2="2877" y1="1378" y2="1517"/>
+<line class="pen1" fill="none" x1="2877" x2="2970" y1="1517" y2="1152"/>
+<line class="pen1" fill="none" x1="2970" x2="3174" y1="1152" y2="1152"/>
+<polygon class="pen2 brush1" points="2753,1394 2800,1368 2877,1485 2964,1144 3174,1144 3174,1161 2976,1161 2886,1517 2869,1517 2781,1389 2758,1403"/>
+<line class="pen4" fill="none" x1="2725" x2="3850" y1="1096" y2="1096"/>
+<line class="pen1" fill="none" x1="2026" x2="2059" y1="1259" y2="1206"/>
+<line class="pen1" fill="none" x1="2059" x2="2146" y1="1206" y2="1610"/>
+<line class="pen1" fill="none" x1="2146" x2="2240" y1="1610" y2="548"/>
+<line class="pen1" fill="none" x1="2240" x2="3878" y1="548" y2="548"/>
+<polygon class="pen2 brush1" points="2022,1257 2069,1182 2146,1519 2233,540 3878,540 3878,557 2248,557 2155,1610 2138,1610 2050,1230 2031,1262"/>
+<line class="pen1" fill="none" x1="5100" x2="5135" y1="870" y2="850"/>
+<line class="pen1" fill="none" x1="5135" x2="5222" y1="850" y2="989"/>
+<line class="pen1" fill="none" x1="5222" x2="5315" y1="989" y2="624"/>
+<line class="pen1" fill="none" x1="5315" x2="5519" y1="624" y2="624"/>
+<polygon class="pen2 brush1" points="5098,866 5145,840 5222,957 5309,616 5519,616 5519,633 5321,633 5231,989 5214,989 5126,861 5103,875"/>
+<line class="pen1" fill="none" x1="5113" x2="5148" y1="1646" y2="1626"/>
+<line class="pen1" fill="none" x1="5148" x2="5235" y1="1626" y2="1765"/>
+<line class="pen1" fill="none" x1="5235" x2="5328" y1="1765" y2="1400"/>
+<line class="pen1" fill="none" x1="5328" x2="5532" y1="1400" y2="1400"/>
+<polygon class="pen2 brush1" points="5111,1642 5158,1616 5235,1733 5322,1392 5532,1392 5532,1409 5334,1409 5244,1765 5227,1765 5139,1637 5116,1651"/>
+<text class="font0" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="4961" xml:space="preserve" y="1800">(</text>
+<text class="font0" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="6215" xml:space="preserve" y="1800">)</text>
+<line class="pen1" fill="none" x1="4278" x2="4311" y1="1792" y2="1743"/>
+<line class="pen1" fill="none" x1="4311" x2="4398" y1="1743" y2="2106"/>
+<line class="pen1" fill="none" x1="4398" x2="4492" y1="2106" y2="1152"/>
+<line class="pen1" fill="none" x1="4492" x2="6342" y1="1152" y2="1152"/>
+<polygon class="pen2 brush1" points="4274,1789 4321,1722 4398,2024 4485,1144 6342,1144 6342,1161 4500,1161 4407,2106 4390,2106 4302,1765 4283,1795"/>
+<line class="pen4" fill="none" x1="4246" x2="6370" y1="1096" y2="1096"/>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="341" xml:lang="en" xml:space="preserve" y="990">1</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2535" xml:lang="en" xml:space="preserve" y="1522">1</text>
+<text class="font1" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="4787" xml:lang="en" xml:space="preserve" y="2075">1</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1093" xml:lang="en" xml:space="preserve" y="439">2</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="769" xml:lang="en" xml:space="preserve" y="955">2</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="3311 5332" xml:lang="en" xml:space="preserve" y="961">22</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2987" xml:lang="en" xml:space="preserve" y="1489">2</text>
+<text class="font2" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="5345" xml:lang="en" xml:space="preserve" y="1737">2</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="220" xml:lang="en" xml:space="preserve" y="299">n</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2414" xml:lang="en" xml:space="preserve" y="822">n</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="118" xml:lang="en" xml:space="preserve" y="990">k</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1470" xml:lang="en" xml:space="preserve" y="1045">k</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2043" xml:lang="en" xml:space="preserve" y="1161">n</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="4666" xml:lang="en" xml:space="preserve" y="1375">n</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2312" xml:lang="en" xml:space="preserve" y="1522">k</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="3688" xml:lang="en" xml:space="preserve" y="1579">k</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="4295" xml:lang="en" xml:space="preserve" y="1700">n</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="6046" xml:lang="en" xml:space="preserve" y="1827">k</text>
+<text class="font3" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="4564" xml:lang="en" xml:space="preserve" y="2075">k</text>
+<text class="font4" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1317" xml:lang="en" xml:space="preserve" y="955">x</text>
+<text class="font4" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="777" xml:lang="en" xml:space="preserve" y="1460">n</text>
+<text class="font4" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="3535" xml:lang="en" xml:space="preserve" y="1489">x</text>
+<text class="font4" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="5893" xml:lang="en" xml:space="preserve" y="1737">x</text>
+<text class="font5" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="237" xml:space="preserve" y="990">=</text>
+<text class="font5" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2431" xml:space="preserve" y="1522">=</text>
+<text class="font5" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="4683" xml:space="preserve" y="2075">=</text>
+<text class="font6" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1035" xml:space="preserve" y="955">+</text>
+<text class="font6" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="1745 3969" xml:space="preserve" y="1184">³=</text>
+<text class="font6" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="3253" xml:space="preserve" y="1489">+</text>
+<text class="font6" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="5611" xml:space="preserve" y="1737">+</text>
+<text class="font7" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="84" xml:space="preserve" y="737">å</text>
+<text class="font7" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="2245" xml:space="preserve" y="1269">Õ</text>
+<text class="font7" fill="rgb(0,0,0)" stroke="none" style="dominant-baseline: alphabetic;" x="4497" xml:space="preserve" y="1822">Õ</text>
+</g>
+</svg>
