@@ -6,6 +6,7 @@
 	<entry key="shuzi">123</entry>
 	<entry key="test_html_path">C:\Users\ylw\Desktop\挑战项目\doc文件\Microsoft_Office_Word_97_-_2003___1.html</entry>
 	<!-- <entry key="test_doc_path">C:\Users\ylw\Desktop\1.doc</entry> -->
-	<entry key="test_doc_path">C:\Users\ylw\Desktop\挑战项目\doc文件\Microsoft_Office_Word_97_-_2003___1.doc</entry>
+	<entry key="test_doc_path">C:\Users\y\Desktop\试卷解析\doc文件\Microsoft_Office_Word_97_-_2003___1.doc</entry>
+	<!-- <entry key="test_doc_path">C:\Users\ylw\Desktop\挑战项目\doc文件\Microsoft_Office_Word_97_-_2003___1.doc</entry> -->
 	<entry key="db_path">jdbc:sqlite:E:/java/gen_logs/parse-paper.db</entry>
 </properties>
