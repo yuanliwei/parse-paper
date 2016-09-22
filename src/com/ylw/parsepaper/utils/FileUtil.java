@@ -82,6 +82,27 @@ public class FileUtil {
 		return "";
 	}
 
+	public static String getString(String fullName, String charset) {
+		String path = fullName;
+		Createfile(path);
+		InputStream in = null;
+		try {
+			in = new FileInputStream(new File(path));
+			ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+			final byte[] tmp = new byte[4096];
+			int l;
+			while ((l = in.read(tmp)) != -1) {
+				buffer.write(tmp, 0, l);
+			}
+			return new String(buffer.toByteArray(), charset);
+		} catch (IOException e) {
+			log.error("write file error ...", e);
+		} finally {
+			IOUtils.close(in);
+		}
+		return "";
+	}
+	
 	public static String getSrcJsString(String fileName) {
 		InputStream inStream = null;
 		try {
@@ -150,6 +171,28 @@ public class FileUtil {
 		try {
 			fos = new FileOutputStream(file);
 			fos.write(data.getBytes("UTF-8"));
+			fos.flush();
+		} catch (IOException e) {
+			log.error("saveFullPathFile : '" + fullPath + "' with '" + data + "' error ...");
+		} finally {
+			IOUtils.close(fos);
+		}
+	}
+	/**
+	 * @description 把一段字符串保存到文件中
+	 * @param fullPath
+	 * @param data
+	 * @return
+	 * @author 袁立位
+	 * @date 2015年7月17日 下午2:44:11
+	 */
+	public static void saveFullPathFile(String fullPath, String data, String charset) {
+		createFile(fullPath);
+		File file = new File(fullPath);
+		FileOutputStream fos = null;
+		try {
+			fos = new FileOutputStream(file);
+			fos.write(data.getBytes(charset));
 			fos.flush();
 		} catch (IOException e) {
 			log.error("saveFullPathFile : '" + fullPath + "' with '" + data + "' error ...");
