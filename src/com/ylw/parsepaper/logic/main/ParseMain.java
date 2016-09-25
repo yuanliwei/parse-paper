@@ -21,6 +21,7 @@ public class ParseMain {
 	SimpleHtmlEngine simpleHtmlEngine = new SimpleHtmlEngine();
 	FormatHtmlEngine formatHtmlEngine = new FormatHtmlEngine();
 	private String resultPath;
+	private static int i;
 
 	public static void main(String[] args) {
 		log.debug("hello parse paper.");
@@ -46,7 +47,7 @@ public class ParseMain {
 			throw new IllegalStateException("文件：\"" + docPath + "\" 没有转换成html");
 		}
 
-		resultPath = PropUtils.get("temp_out_path") + "format.html";
+		resultPath = PropUtils.get("temp_out_path") + "format" + i++ + ".html";
 		FileUtil.delete(resultPath);
 
 		parseHtml(outPath, resultPath);

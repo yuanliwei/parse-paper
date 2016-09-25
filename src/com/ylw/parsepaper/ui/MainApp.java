@@ -17,9 +17,11 @@ public class MainApp extends Application {
 	private BorderPane root;
 	public MainViewController mainViewController;
 	public MainAppController mainAppController;
+	public Stage primaryStage;
 
 	@Override
 	public void start(Stage primaryStage) {
+		this.primaryStage = primaryStage;
 		primaryStage.setTitle("解析试卷");
 		primaryStage.getIcons().add(ResUtil.getImageFromRes("icon.png"));
 		PropUtils.load();

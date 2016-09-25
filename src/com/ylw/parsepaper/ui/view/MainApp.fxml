@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ylw.parsepaper.ui.view.MainAppController">
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ylw.parsepaper.ui.view.MainAppController">
 	<top>
 		<MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
 			<menus>
@@ -39,6 +42,16 @@
 		<ListView fx:id="listView" prefWidth="200.0" BorderPane.alignment="CENTER" />
 	</right>
    <center>
-      <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label id="noContentTip" alignment="CENTER" stylesheets="@../application.css" text="请从File &gt; 打开文件  打开一个word文档。" textAlignment="CENTER" textFill="#d7d3d3" wrapText="true">
+               <font>
+                  <Font size="37.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </StackPane.margin>
+            </Label>
+         </children></StackPane>
    </center>
 </BorderPane>

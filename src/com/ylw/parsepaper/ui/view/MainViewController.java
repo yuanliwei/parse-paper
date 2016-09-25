@@ -4,6 +4,9 @@ import com.ylw.parsepaper.ui.MainApp;
 import com.ylw.parsepaper.ui.controller.BaseController;
 import com.ylw.parsepaper.ui.controller.JSInterface;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Worker.State;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -20,6 +23,7 @@ public class MainViewController extends BaseController {
 	WebView webView;
 	private MainApp mainApp;
 	public WebEngine webEngine;
+	private JSInterface jsObj;
 
 	/**
 	 * Initializes the controller class. This method is automatically called
@@ -29,12 +33,9 @@ public class MainViewController extends BaseController {
 	protected void initialize() {
 		// Initialize the person table with the two columns.
 		webEngine = webView.getEngine();
+		jsObj = new JSInterface();
 
-		JSInterface jsObj = new JSInterface();
-		JSObject window = (JSObject) webEngine.executeScript("window");
-		window.setMember("jsObj", jsObj);
-
-		webEngine.load("file:///C:/Users/ylw/Desktop/tempout/format.html");
+		load("file:///C:/Users/ylw/Desktop/tempout/format.html");
 
 		webEngine.setOnError(event -> {
 			System.out.println(event.getMessage());
@@ -47,6 +48,16 @@ public class MainViewController extends BaseController {
 			alert.contentTextProperty().set(event.getData());
 			alert.showAndWait();
 		});
+
+		webEngine.getLoadWorker().stateProperty().addListener(new ChangeListener<State>() {
+			public void changed(ObservableValue ov, State oldState, State newState) {
+				JSObject window = (JSObject) webEngine.executeScript("window");
+				System.out.println("sssssssss  - " + newState + "   " + window.getMember("jsObj"));
+				window.setMember("jsObj", jsObj);
+				exec("initLog()");
+			}
+		});
+
 	}
 
 	public void setMainApp(MainApp mainApp) {
@@ -55,6 +66,11 @@ public class MainViewController extends BaseController {
 
 	public void load(String filePath) {
 		webEngine.load("file:///" + filePath);
+
+	}
+
+	public void exec(String jsData) {
+		webEngine.executeScript(jsData);
 	}
 
 }
