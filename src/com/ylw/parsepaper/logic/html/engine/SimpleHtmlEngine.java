@@ -8,6 +8,10 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.htmlparser.Node;
 import org.htmlparser.Parser;
+import org.htmlparser.tags.BodyTag;
+import org.htmlparser.tags.Div;
+import org.htmlparser.tags.HeadTag;
+import org.htmlparser.tags.StyleTag;
 import org.htmlparser.util.NodeList;
 import org.htmlparser.util.ParserException;
 import org.htmlparser.util.SimpleNodeIterator;
@@ -54,17 +58,51 @@ public class SimpleHtmlEngine {
 			Node node = list.elementAt(0);
 			NodeList sublist = node.getChildren();
 
-			Node head = sublist.elementAt(0);
-			Node style = head.getLastChild();
+			Node head = null;
+			Node style = null;
+			Node body = null;
+
+			for (int i = 0; i < sublist.size(); i++) {
+				Node n = sublist.elementAt(i);
+				if (n instanceof HeadTag) {
+					NodeList headList = n.getChildren();
+					for (int j = 0; j < headList.size(); j++) {
+						Node n1 = headList.elementAt(j);
+						if (n1 instanceof StyleTag) {
+							style = n1;
+							break;
+						}
+					}
+					continue;
+				}
+				if (n instanceof BodyTag) {
+					body = n;
+					break;
+				}
+			}
+
+			if (style == null) {
+				throw new IllegalStateException("未找到样式表。");
+			}
+			if (body == null) {
+				throw new IllegalStateException("未找到Body。");
+			}
+
 			this.style = style.toHtml();
 
-			Node body = sublist.elementAt(1);
-			NodeList paragraphNodes = body.getChildren().elementAt(0).getChildren();
-			SimpleNodeIterator eles = paragraphNodes.elements();
-			paragraphs = new ArrayList<>(paragraphNodes.size());
-			while (eles.hasMoreNodes()) {
-				paragraphs.add(new HtmlParagraph(eles.nextNode()));
+			// body struct : body -> (div)+ -> paragraphs
+			NodeList blist = body.getChildren();
+			paragraphs = new ArrayList<>();
+			for (int i = 0; i < blist.size(); i++) {
+				Node n = blist.elementAt(i);
+				if (n instanceof Div) {
+					SimpleNodeIterator ps = n.getChildren().elements();
+					while (ps.hasMoreNodes()) {
+						paragraphs.add(new HtmlParagraph(ps.nextNode()));
+					}
+				}
 			}
+
 		} catch (ParserException e) {
 			log.error(e.getMessage(), e);
 		}

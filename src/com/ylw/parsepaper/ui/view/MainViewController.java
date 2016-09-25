@@ -34,6 +34,7 @@ public class MainViewController extends BaseController {
 		// Initialize the person table with the two columns.
 		webEngine = webView.getEngine();
 		jsObj = new JSInterface();
+		jsObj.setMainApp(mainApp);
 
 		load("file:///C:/Users/ylw/Desktop/tempout/format.html");
 
@@ -49,12 +50,12 @@ public class MainViewController extends BaseController {
 			alert.showAndWait();
 		});
 
-		webEngine.getLoadWorker().stateProperty().addListener(new ChangeListener<State>() {
-			public void changed(ObservableValue ov, State oldState, State newState) {
-				JSObject window = (JSObject) webEngine.executeScript("window");
-				System.out.println("sssssssss  - " + newState + "   " + window.getMember("jsObj"));
-				window.setMember("jsObj", jsObj);
-				exec("initLog()");
+		webEngine.getLoadWorker().stateProperty().addListener((ov, oldState, newState) -> {
+			JSObject window = (JSObject) webEngine.executeScript("window");
+			System.out.println("sssssssss  - " + newState + "   " + window.getMember("jsObj"));
+			window.setMember("jsObj", jsObj);
+			if (newState == State.SUCCEEDED) {
+				exec("onPageLoaded()");
 			}
 		});
 
@@ -62,6 +63,7 @@ public class MainViewController extends BaseController {
 
 	public void setMainApp(MainApp mainApp) {
 		this.mainApp = mainApp;
+		jsObj.setMainApp(mainApp);
 	}
 
 	public void load(String filePath) {

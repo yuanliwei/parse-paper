@@ -1,14 +1,11 @@
 package com.ylw.parsepaper.logic.main;
 
-import static org.junit.Assert.assertFalse;
-
 import java.io.IOException;
 import java.text.MessageFormat;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.http.util.TextUtils;
 
 import com.ylw.parsepaper.logic.html.engine.FormatHtmlEngine;
 import com.ylw.parsepaper.logic.html.engine.SimpleHtmlEngine;
@@ -18,10 +15,9 @@ import com.ylw.parsepaper.logic.utils.PropUtils;
 
 public class ParseMain {
 	private static Log log = LogFactory.getLog(ParseMain.class);
-	SimpleHtmlEngine simpleHtmlEngine = new SimpleHtmlEngine();
-	FormatHtmlEngine formatHtmlEngine = new FormatHtmlEngine();
+	public SimpleHtmlEngine simpleHtmlEngine = new SimpleHtmlEngine();
+	public FormatHtmlEngine formatHtmlEngine = new FormatHtmlEngine();
 	private String resultPath;
-	private static int i;
 
 	public static void main(String[] args) {
 		log.debug("hello parse paper.");
@@ -47,7 +43,7 @@ public class ParseMain {
 			throw new IllegalStateException("文件：\"" + docPath + "\" 没有转换成html");
 		}
 
-		resultPath = PropUtils.get("temp_out_path") + "format" + i++ + ".html";
+		resultPath = PropUtils.get("temp_out_path") + "format" + ".html";
 		FileUtil.delete(resultPath);
 
 		parseHtml(outPath, resultPath);
@@ -82,8 +78,12 @@ public class ParseMain {
 		if (StringUtils.isBlank(html)) {
 			throw new IllegalStateException("未找到资源文件：" + htmlPath);
 		}
-		assertFalse("未找到资源文件：" + htmlPath, TextUtils.isBlank(html));
 
+		parseHtmlText(html, formatHtmlPath);
+
+	}
+
+	public void parseHtmlText(String html, String formatHtmlPath) {
 		simpleHtmlEngine.parse(html);
 
 		formatHtmlEngine.parseStyles(simpleHtmlEngine.getStyle());
