@@ -22,9 +22,16 @@ import com.ylw.parsepaper.html.model.HtmlParagraph;
  */
 public class SimpleHtmlEngine {
 	private static Log log = LogFactory.getLog(SimpleHtmlEngine.class);
+	private List<HtmlParagraph> paragraphs;
+	private String style;
 
-	public String parse(String html) {
+	public void parse(String html) {
 		log.debug("SimpleHtmlEngine.parse()");
+		html = simpleHtml(html);
+		parseContent(html);
+	}
+
+	public String simpleHtml(String html) {
 		html = deleteComment(html);
 		html = deleteRange(html, "mso-", ";", 80);
 		html = deleteStr(html, "<o:p></o:p>");
@@ -35,33 +42,41 @@ public class SimpleHtmlEngine {
 		// html = replaceStr(html,
 		// "地理：2011年普通高等学校招生全国统一考试文综地理部分（新课标全国卷）","pics");
 		html = html.replaceAll("(\r\n)+", "\n");
- 
 		return html;
 	}
 
-	public List<HtmlParagraph> getParagraphs(String html) {
-		String result = parse(html);
-
-		List<HtmlParagraph> results = Collections.emptyList();
+	private void parseContent(String html) {
+		paragraphs = Collections.emptyList();
 		try {
-			Parser parser = new Parser(result);
+			Parser parser = new Parser(html);
 			NodeList list = parser.parse(null);
 
 			Node node = list.elementAt(0);
 			NodeList sublist = node.getChildren();
+
+			Node head = sublist.elementAt(0);
+			Node style = head.getLastChild();
+			this.style = style.toHtml();
+
 			Node body = sublist.elementAt(1);
 			NodeList paragraphNodes = body.getChildren().elementAt(0).getChildren();
 			SimpleNodeIterator eles = paragraphNodes.elements();
-			results = new ArrayList<>(paragraphNodes.size());
+			paragraphs = new ArrayList<>(paragraphNodes.size());
 			while (eles.hasMoreNodes()) {
-				results.add(new HtmlParagraph(eles.nextNode()));
+				paragraphs.add(new HtmlParagraph(eles.nextNode()));
 			}
 		} catch (ParserException e) {
 			log.error(e.getMessage(), e);
 		}
 
-		return results;
+	}
 
+	public List<HtmlParagraph> getParagraphs() {
+		return paragraphs;
+	}
+
+	public String getStyle() {
+		return style;
 	}
 
 	/**
