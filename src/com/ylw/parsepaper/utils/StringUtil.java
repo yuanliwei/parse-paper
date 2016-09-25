@@ -44,8 +44,9 @@ public class StringUtil {
 	public static String htmlDecode(String sAscii) {
 		if (TextUtils.isEmpty(sAscii))
 			return "";
-		HttpClientUtils.
-		return sb.toString();
+		return "";
+//		deco
+//		return sb.toString();
 	}
 
 }
