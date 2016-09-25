@@ -20,7 +20,6 @@ public class DocEngine {
 			log.error(e.getMessage(), e);
 		}
 		return null;
-
 	}
 
 	public static String convert2Html(String fileName, String picPath, String imgSrcPath)

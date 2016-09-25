@@ -102,7 +102,7 @@ public class FileUtil {
 		}
 		return "";
 	}
-	
+
 	public static String getSrcJsString(String fileName) {
 		InputStream inStream = null;
 		try {
@@ -178,6 +178,7 @@ public class FileUtil {
 			IOUtils.close(fos);
 		}
 	}
+
 	/**
 	 * @description 把一段字符串保存到文件中
 	 * @param fullPath
@@ -269,5 +270,14 @@ public class FileUtil {
 			log.error(e.getMessage(), e);
 		}
 		return null;
+	}
+
+	public static void delete(String path) {
+		if (!isExistFile(path))
+			return;
+		File file = new File(path);
+		if (file.exists()) {
+			file.delete();
+		}
 	}
 }

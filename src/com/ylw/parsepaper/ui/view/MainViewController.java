@@ -34,7 +34,6 @@ public class MainViewController extends BaseController {
 		JSObject window = (JSObject) webEngine.executeScript("window");
 		window.setMember("jsObj", jsObj);
 
-		// webEngine.load("file:///C:/Users/ylw/Desktop/tempout/Paragraphs.html");
 		webEngine.load("file:///C:/Users/ylw/Desktop/tempout/format.html");
 
 		webEngine.setOnError(event -> {
@@ -51,8 +50,11 @@ public class MainViewController extends BaseController {
 	}
 
 	public void setMainApp(MainApp mainApp) {
-		// TODO Auto-generated method stub
 		this.mainApp = mainApp;
+	}
+
+	public void load(String filePath) {
+		webEngine.load("file:///" + filePath);
 	}
 
 }

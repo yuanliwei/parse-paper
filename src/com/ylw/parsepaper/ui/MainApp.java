@@ -2,6 +2,7 @@ package com.ylw.parsepaper.ui;
 
 import java.io.IOException;
 
+import com.ylw.parsepaper.logic.utils.PropUtils;
 import com.ylw.parsepaper.ui.utils.ResUtil;
 import com.ylw.parsepaper.ui.view.MainAppController;
 import com.ylw.parsepaper.ui.view.MainViewController;
@@ -21,7 +22,7 @@ public class MainApp extends Application {
 	public void start(Stage primaryStage) {
 		primaryStage.setTitle("解析试卷");
 		primaryStage.getIcons().add(ResUtil.getImageFromRes("icon.png"));
-
+		PropUtils.load();
 		FXMLLoader loader = ResUtil.getFXMLLoader("MainApp.fxml");
 		try {
 			root = loader.load();
@@ -44,7 +45,8 @@ public class MainApp extends Application {
 		try {
 			BorderPane center = loader.load();
 			mainViewController = loader.getController();
-			root.setCenter(center);
+			mainAppController.setCenter(center);
+			// mainAppController.stackPane.getChildren().add(center);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
