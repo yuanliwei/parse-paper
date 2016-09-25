@@ -170,12 +170,12 @@ public class SimpleHtmlEngineTest {
 	@Test
 	public void testParse() {
 		String sample = "ssdffgfghfghgh";
-		String r = engine.parse(sample);
+		String r = engine.simpleHtml(sample);
 		log.debug("========|" + r + "|");
 		assertTrue(sample.equals(r));
 
 		sample = "<ha>sdf</sdf>";
-		r = engine.parse(sample);
+		r = engine.simpleHtml(sample);
 		assertTrue(sample.equals(r));
 
 		sample = "<!-->sd\n\r\ndfgf</sd-->f>";
@@ -185,7 +185,7 @@ public class SimpleHtmlEngineTest {
 		log.debug(sample.replaceAll("<!--(.|[\n\r])*?-->", "==="));
 
 		sample = "<!-->sdf</sd-->f>";
-		r = engine.parse(sample);
+		r = engine.simpleHtml(sample);
 		log.debug(r);
 		assertTrue("f>".equals(r));
 
@@ -199,11 +199,11 @@ public class SimpleHtmlEngineTest {
 		// FileUtil.saveFullPathFile(resultPath, html, "GBK");
 		assertFalse("没有找到资源文件：" + htmlPath, TextUtils.isBlank(html));
 
-		String result = engine.parse(html);
+		String result = engine.simpleHtml(html);
 
 		resultPath = PropUtils.get("temp_out_path") + "handled2.html";
 		// TODO 暂时不保存解析数据
-//		FileUtil.saveFullPathFile(resultPath, result, "GBK");
+		// FileUtil.saveFullPathFile(resultPath, result, "GBK");
 
 		assertTrue("解析结果还包含有注释内容 <!-- * -->", result.indexOf("<!--") == -1);
 	}
@@ -214,7 +214,7 @@ public class SimpleHtmlEngineTest {
 		String html = FileUtil.getString(htmlPath, "GBK");
 		assertFalse("未找到资源文件：" + htmlPath, TextUtils.isBlank(html));
 
-		List<HtmlParagraph> results = engine.getParagraphs(html);
+		List<HtmlParagraph> results = engine.getParagraphs();
 		StringBuilder result = new StringBuilder();
 		for (HtmlParagraph htmlParagraph : results) {
 			if (htmlParagraph.html.startsWith("<") && htmlParagraph.html.endsWith(">")) {

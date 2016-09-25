@@ -1,13 +1,12 @@
 package com.ylw.parsepaper.html.engine;
 
 import java.text.MessageFormat;
-import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.lang3.text.StrBuilder;
 
 import com.ylw.parsepaper.html.model.HtmlParagraph;
-import com.ylw.parsepaper.utils.FileUtil;
+import com.ylw.parsepaper.utils.Res;
 
 /**
  * 从html中解析出一个可以用来解析试题的对象
@@ -44,20 +43,18 @@ public class FormatHtmlEngine {
 		this.html = sbHtml.toString();
 	}
 
-	public void getAllText(String htmlPath) {
-
+	public String getAllText(String htmlPath) {
+		return text;
 	}
 
 	public String getAllHtml() {
-		return "";
+		return html;
 	}
 
 	public String getHtmlPage() {
-		String template = FileUtil.
-		String result = MessageFormat.format("At {1,time} on {1,date}, there was {2} on planet {0,number,integer}.",
-				planet, new Date(), event);
-
-		return "";
+		String template = Res.getString("html/template.html");
+		String result = MessageFormat.format(template, style, html);
+		return result;
 	}
 
 }
