@@ -1,10 +1,16 @@
 package com.ylw.parsepaper.html.engine;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.htmlparser.Node;
+import org.htmlparser.Parser;
+import org.htmlparser.util.NodeList;
+import org.htmlparser.util.ParserException;
+import org.htmlparser.util.SimpleNodeIterator;
 
 import com.ylw.parsepaper.html.model.HtmlParagraph;
 
@@ -25,22 +31,35 @@ public class SimpleHtmlEngine {
 		// html = deleteStr(html, "<o:p>&nbsp;</o:p>");
 		// html = deleteRange(html, "<o:p>", "</o:p>", 30);
 		html = replaceRange(html, "<o:p>", "</o:p>", 30, "<br>");
+		// html = deleteRange(html, "<meta ", ">", 100);
 		// html = replaceStr(html,
 		// "地理：2011年普通高等学校招生全国统一考试文综地理部分（新课标全国卷）","pics");
 		html = html.replaceAll("(\r\n)+", "\n");
+ 
 		return html;
 	}
 
 	public List<HtmlParagraph> getParagraphs(String html) {
 		String result = parse(html);
-		String prefix = "<p";
-		String endfix = "</p>";
-		int maxLength = 0;
-		List<String> paragraphs = findRanges(result, prefix, endfix, maxLength);
-		List<HtmlParagraph> results = new ArrayList<>(paragraphs.size());
-		for (String string : paragraphs) {
-			results.add(new HtmlParagraph(string));
+
+		List<HtmlParagraph> results = Collections.emptyList();
+		try {
+			Parser parser = new Parser(result);
+			NodeList list = parser.parse(null);
+
+			Node node = list.elementAt(0);
+			NodeList sublist = node.getChildren();
+			Node body = sublist.elementAt(1);
+			NodeList paragraphNodes = body.getChildren().elementAt(0).getChildren();
+			SimpleNodeIterator eles = paragraphNodes.elements();
+			results = new ArrayList<>(paragraphNodes.size());
+			while (eles.hasMoreNodes()) {
+				results.add(new HtmlParagraph(eles.nextNode()));
+			}
+		} catch (ParserException e) {
+			log.error(e.getMessage(), e);
 		}
+
 		return results;
 
 	}

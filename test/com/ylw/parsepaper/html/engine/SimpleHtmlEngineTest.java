@@ -197,12 +197,13 @@ public class SimpleHtmlEngineTest {
 
 		// 原始文件另存为...
 		// FileUtil.saveFullPathFile(resultPath, html, "GBK");
-		assertFalse("未找到资源文件：" + htmlPath, TextUtils.isBlank(html));
+		assertFalse("没有找到资源文件：" + htmlPath, TextUtils.isBlank(html));
 
 		String result = engine.parse(html);
 
 		resultPath = PropUtils.get("temp_out_path") + "handled2.html";
-		FileUtil.saveFullPathFile(resultPath, result, "GBK");
+		// TODO 暂时不保存解析数据
+//		FileUtil.saveFullPathFile(resultPath, result, "GBK");
 
 		assertTrue("解析结果还包含有注释内容 <!-- * -->", result.indexOf("<!--") == -1);
 	}

@@ -2,6 +2,7 @@ package com.ylw.parsepaper.html.model;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.htmlparser.Node;
 
 public class HtmlParagraph {
 	private static Log log = LogFactory.getLog(HtmlParagraph.class);
@@ -14,6 +15,10 @@ public class HtmlParagraph {
 	public int hLength; // html的长度
 	public int index; // 段落的索引号
 	public int type; // 段落的类型
+	public int textStartPos;
+	public int textEndPos;
+
+	public Node node;
 
 	public HtmlParagraph(String string) {
 		// TODO Auto-generated constructor stub
@@ -28,6 +33,29 @@ public class HtmlParagraph {
 		hLength = html.length();
 		pStyle = string.substring("<p".length(), string.indexOf(">")).trim();
 		log.debug(string);
+	}
+
+	public HtmlParagraph(Node node) {
+		this.node = node;
+		text = node.toPlainTextString();
+		html = node.toHtml();
+	}
+
+	public void initPos() {
+
+	}
+
+	public void setTextPostion(int start, int end) {
+		this.textStartPos = start;
+		this.textEndPos = end;
+	}
+
+	public boolean isMe(int postion) {
+		if (textStartPos <= postion && textEndPos > postion) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }
