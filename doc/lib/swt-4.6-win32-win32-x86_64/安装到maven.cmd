@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=org.eclipse.swt.win32.win32.x86_64-4.6.jar -DgroupId=org.eclipse.swt -DartifactId=org.eclipse.swt.win32.win32.x86_64 -Dversion=4.6 -Dpackaging=jar
