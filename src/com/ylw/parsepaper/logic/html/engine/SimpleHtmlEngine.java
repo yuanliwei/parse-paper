@@ -42,6 +42,7 @@ public class SimpleHtmlEngine {
 		// html = deleteStr(html, "<o:p>&nbsp;</o:p>");
 		// html = deleteRange(html, "<o:p>", "</o:p>", 30);
 		html = replaceRange(html, "<o:p>", "</o:p>", 30, "<br>");
+		html = replaceRange(html, "margin-", ":0.0000pt;", 30, "<br>");
 		// html = deleteRange(html, "<meta ", ">", 100);
 		// html = replaceStr(html,
 		// "地理：2011年普通高等学校招生全国统一考试文综地理部分（新课标全国卷）","pics");

@@ -4,17 +4,11 @@ import com.ylw.parsepaper.ui.MainApp;
 import com.ylw.parsepaper.ui.controller.BaseController;
 import com.ylw.parsepaper.ui.controller.JSInterface;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Worker.State;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Dialog;
 import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebErrorEvent;
-import javafx.scene.web.WebEvent;
 import javafx.scene.web.WebView;
 import netscape.javascript.JSObject;
 
@@ -35,8 +29,6 @@ public class MainViewController extends BaseController {
 		webEngine = webView.getEngine();
 		jsObj = new JSInterface();
 		jsObj.setMainApp(mainApp);
-
-		load("file:///C:/Users/ylw/Desktop/tempout/format.html");
 
 		webEngine.setOnError(event -> {
 			System.out.println(event.getMessage());

@@ -1,6 +1,7 @@
 p:hover{
-  background: rgba(111, 111, 111, 0.5);
+  background: rgba(222, 222, 222, 0.5);
+  cursor: pointer;
 }
 p.select{
-  background: rgba(111, 111, 111, 0.5);
+  background: rgba(81, 48, 130, 0.4);
 }

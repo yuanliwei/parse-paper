@@ -1,4 +1,4 @@
-var initView, onPageLoaded;
+var initView, onPageLoaded, onerror;
 
 onPageLoaded = function() {
   var error, error1;
@@ -22,16 +22,29 @@ onPageLoaded = function() {
 };
 
 initView = function() {
-  return $('p').each(function(num, tr) {
-    return $(tr).mousemove((function(_this) {
-      return function(e) {
-        if (e.ctrlKey) {
-          $(tr).addClass('select');
-        }
-        if (e.altKey) {
-          return $(tr).removeClass('select');
-        }
-      };
-    })(this));
+  return $('p').click(function(e) {
+    var dt, p;
+    mlog(("click........" + e.timeStamp + "........") + (e.timeStamp - window.lastClickTime));
+    dt = e.timeStamp - window.lastClickTime;
+    window.lastClickTime = e.timeStamp;
+    if (dt < 100) {
+      return;
+    }
+    console.dir($(e.target));
+    if ($(e.target)[0].tagName === 'P') {
+      p = $(e.target);
+    } else {
+      p = $(e.target).parents('p');
+    }
+    console.dir(p);
+    return $(p).addClass("select");
   });
+};
+
+$(document).ready(function() {
+  return onPageLoaded();
+});
+
+onerror = function(e) {
+  return alert("JS 发生错误！");
 };

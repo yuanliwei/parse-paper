@@ -285,12 +285,13 @@ public class MainAppController extends BaseController {
 			parseMain.parseHtmlText(result, parseMain.getHtmlPath());
 			mainApp.mainViewController.load(parseMain.getHtmlPath());
 		}
-		
-		if (!hasLoadPage) {
-			return;
-		}
-		if (mainApp.mainViewController.webEngine.getLoadWorker().getState() != State.SUCCEEDED) {
-			return;
+		if (!save) {
+			if (!hasLoadPage) {
+				return;
+			}
+			if (mainApp.mainViewController.webEngine.getLoadWorker().getState() != State.SUCCEEDED) {
+				return;
+			}
 		}
 		FadeTransition ft = new FadeTransition(Duration.millis(500), htmlEditor);
 		ft.setFromValue(1);

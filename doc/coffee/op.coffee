@@ -15,8 +15,22 @@ onPageLoaded = () ->
     initView()
 
 initView = ()->
-  $('p').each (num, tr) ->
-    $(tr).mousemove (e) =>
-      $(tr).addClass('select') if e.ctrlKey
-      $(tr).removeClass('select') if e.altKey
-      # updateStats() if e.ctrlKey || e.altKey
+  $('p').click (e) ->
+    mlog("click........#{e.timeStamp}........" + (e.timeStamp - window.lastClickTime))
+    # console.log "click....."
+    dt = e.timeStamp - window.lastClickTime
+    window.lastClickTime = e.timeStamp
+    return if(dt < 100)
+    console.dir $(e.target)
+    if $(e.target)[0].tagName == 'P'
+      p = $(e.target)
+    else
+      p = $(e.target).parents('p')
+    console.dir p
+    $(p).addClass("select")
+    # $(p).toggleClass("select")
+
+$(document).ready ()-> onPageLoaded()
+
+onerror = (e) ->
+  alert("JS 发生错误！")
