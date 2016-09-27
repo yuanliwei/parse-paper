@@ -2,6 +2,7 @@ package com.ylw.parsepaper.logic.main;
 
 import java.io.IOException;
 import java.text.MessageFormat;
+import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
@@ -9,6 +10,8 @@ import org.apache.commons.logging.LogFactory;
 
 import com.ylw.parsepaper.logic.html.engine.FormatHtmlEngine;
 import com.ylw.parsepaper.logic.html.engine.SimpleHtmlEngine;
+import com.ylw.parsepaper.logic.html.model.HtmlParagraph;
+import com.ylw.parsepaper.logic.paper.engine.PaperEngine;
 import com.ylw.parsepaper.logic.utils.CacheUtil;
 import com.ylw.parsepaper.logic.utils.FileUtil;
 import com.ylw.parsepaper.logic.utils.PropUtils;
@@ -17,6 +20,8 @@ public class ParseMain {
 	private static Log log = LogFactory.getLog(ParseMain.class);
 	public SimpleHtmlEngine simpleHtmlEngine = new SimpleHtmlEngine();
 	public FormatHtmlEngine formatHtmlEngine = new FormatHtmlEngine();
+	public PaperEngine paperEngine = new PaperEngine();
+	
 	private String resultPath;
 
 	public static void main(String[] args) {
@@ -51,7 +56,14 @@ public class ParseMain {
 		if (!FileUtil.isExistFile(resultPath)) {
 			throw new IllegalStateException("文件：\"" + outPath + "\" 没有转换成  \"" + resultPath + "\"");
 		}
+		
+		parsePaper();
 
+	}
+
+	private void parsePaper() {
+		List<HtmlParagraph> ps = simpleHtmlEngine.getParagraphs();
+		paperEngine.parse(ps);
 	}
 
 	public void openDoc(String docPath, String outPath) {

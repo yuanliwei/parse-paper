@@ -8,6 +8,6 @@
 	<entry key="db_path">jdbc:sqlite:E:/java/gen_logs/parse-paper.db</entry>
 	<entry key="test_html_path">E:\workspace_eclipse-jee-mars-2-win32-x86_64\parse-paper\doc\试卷样例\试卷_html\地理（2份）\地理：2011年普通高等学校招生全国统一考试文综地理部分（新课标全国卷）.html</entry>
  	<entry key="temp_out_path">C:\Users\ylw\Desktop\tempout\</entry>
- 	<entry key="doc_to_html">E:\workspace_eclipse-jee-mars-2-win32-x86_64\parse-paper\doc\C#_project\DocToHtml.exe</entry>
+ 	<entry key="doc_to_html">E:\workspace_eclipse-jee-mars-2-win32-x86_64\parse-paper\doc\CSharp_project\DocToHtml.exe</entry>
 
 </properties>

@@ -14,7 +14,7 @@ public class HtmlParagraph {
 	public int tLength; // 纯文本的长度
 	public int hLength; // html的长度
 	public int index; // 段落的索引号
-	public int type; // 段落的类型
+	public int type; // 段落的类型   = Part.T_XXXX
 	public int textStartPos;
 	public int textEndPos;
 
@@ -35,8 +35,9 @@ public class HtmlParagraph {
 		log.debug(string);
 	}
 
-	public HtmlParagraph(Node node) {
+	public HtmlParagraph(Node node, int index2) {
 		this.node = node;
+		this.index = index2;
 		text = node.toPlainTextString();
 		html = node.toHtml();
 	}

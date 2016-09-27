@@ -7,6 +7,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.ylw.parsepaper.logic.main.ParseMain;
+import com.ylw.parsepaper.logic.paper.model.Part;
 import com.ylw.parsepaper.logic.utils.FileUtil;
 import com.ylw.parsepaper.logic.utils.PropUtils;
 import com.ylw.parsepaper.ui.MainApp;
@@ -54,7 +55,7 @@ public class MainAppController extends BaseController {
 	ObservableList<ListItemData> data = FXCollections.observableArrayList();
 
 	private MainApp mainApp;
-	private ParseMain parseMain;
+	public ParseMain parseMain;
 
 	@FXML
 	public StackPane stackPane;
@@ -67,6 +68,7 @@ public class MainAppController extends BaseController {
 
 	@Override
 	protected void initialize() {
+		data.add(new ListItemData("T_PAPER_大标题", "addTypeForSel({0})", Part.T_PAPER_大标题));
 		data.add(new ListItemData("alert", "alert('hello')"));
 		data.add(new ListItemData("initView", "window.initView()"));
 		data.add(new ListItemData("log", "mlog('helllo      jjjh')"));

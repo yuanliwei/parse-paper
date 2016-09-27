@@ -98,8 +98,9 @@ public class SimpleHtmlEngine {
 				Node n = blist.elementAt(i);
 				if (n instanceof Div) {
 					SimpleNodeIterator ps = n.getChildren().elements();
+					int index = 0;
 					while (ps.hasMoreNodes()) {
-						paragraphs.add(new HtmlParagraph(ps.nextNode()));
+						paragraphs.add(new HtmlParagraph(ps.nextNode(), index++));
 					}
 				}
 			}
