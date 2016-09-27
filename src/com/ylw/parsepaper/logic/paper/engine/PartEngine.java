@@ -21,4 +21,17 @@ public class PartEngine {
 		});
 	}
 
+	public List<Part> getParts() {
+		return parts;
+	}
+
+	public List<Part> getFormatLevelParts() {
+		List<Part> ps = new ArrayList<>();
+		for(int i=0;i<parts.size();i++){
+			Part p = parts.get(i);
+			
+		}
+		return ps;
+	}
+
 }
