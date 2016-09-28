@@ -23,12 +23,12 @@ addTypeForSel = function(type) {
   ids = [];
   $('.paragraphs.select').each((function(_this) {
     return function(i, e) {
-      var index, j;
-      for (index = j = 0; j <= 20; index = ++j) {
-        e.classList.remove("paragraphsType_" + index);
-      }
+      $(e).attr('class', function(i, cls) {
+        return cls.replace(/paragraphsType_\d+ /g, '');
+      });
       e.classList.add("paragraphsType_" + type);
-      return ids.push(e.id.split('_')[1]);
+      ids.push(e.id.split('_')[1]);
+      return $(e).removeClass('select');
     };
   })(this));
   ids.join(',');

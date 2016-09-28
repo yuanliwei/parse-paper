@@ -21,7 +21,7 @@ public class ParseMain {
 	public SimpleHtmlEngine simpleHtmlEngine = new SimpleHtmlEngine();
 	public FormatHtmlEngine formatHtmlEngine = new FormatHtmlEngine();
 	public PaperEngine paperEngine = new PaperEngine();
-	
+
 	private String resultPath;
 
 	public static void main(String[] args) {
@@ -56,12 +56,17 @@ public class ParseMain {
 		if (!FileUtil.isExistFile(resultPath)) {
 			throw new IllegalStateException("文件：\"" + outPath + "\" 没有转换成  \"" + resultPath + "\"");
 		}
-		
+
 		parsePaper();
 
 	}
 
 	private void parsePaper() {
+		List<HtmlParagraph> ps = simpleHtmlEngine.getParagraphs();
+		paperEngine.parse(ps);
+	}
+
+	public void parsePaperStruct() {
 		List<HtmlParagraph> ps = simpleHtmlEngine.getParagraphs();
 		paperEngine.parse(ps);
 	}

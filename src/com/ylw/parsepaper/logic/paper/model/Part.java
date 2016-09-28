@@ -8,6 +8,7 @@ import com.ylw.parsepaper.logic.html.model.HtmlParagraph;
 
 public class Part {
 
+	public static final int T_TYPE_NONE = -1; // 未知类型
 	// 试卷
 	public static final int T_PAPER = 0; // 试卷大题分割线
 	public static final int T_PAPER_大标题 = T_PAPER + 1; // 试卷大标题
@@ -55,5 +56,35 @@ public class Part {
 		type = paragraphs.get(0).type;
 		start = paragraphs.get(0).index;
 		end = paragraphs.get(paragraphs.size() - 1).index;
+	}
+
+	/**
+	 * 是否试卷元素
+	 * 
+	 * @param type
+	 * @return
+	 */
+	public static boolean isPaper(int type) {
+		return type > T_TYPE_NONE && type < T_BIG;
+	}
+
+	/**
+	 * 是否大题元素
+	 * 
+	 * @param type
+	 * @return
+	 */
+	public static boolean isBig(int type) {
+		return type > T_BIG && type < T_SMALL;
+	}
+
+	/**
+	 * 是否小题元素
+	 * 
+	 * @param type
+	 * @return
+	 */
+	public static boolean isSmall(int type) {
+		return type > T_SMALL;
 	}
 }

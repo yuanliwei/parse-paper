@@ -4,6 +4,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.htmlparser.Node;
 
+import com.ylw.parsepaper.logic.paper.model.Part;
+
 public class HtmlParagraph {
 	private static Log log = LogFactory.getLog(HtmlParagraph.class);
 
@@ -20,6 +22,7 @@ public class HtmlParagraph {
 
 	public Node node;
 
+	@Deprecated
 	public HtmlParagraph(String string) {
 		// TODO Auto-generated constructor stub
 		// <p class=MsoNormal style="layout-grid-mode:char;text-align:left;" >
@@ -40,6 +43,7 @@ public class HtmlParagraph {
 		this.index = index2;
 		text = node.toPlainTextString();
 		html = node.toHtml();
+		type = Part.T_TYPE_NONE;
 	}
 
 	public void initPos() {

@@ -16,10 +16,11 @@ onPageLoaded = () ->
 addTypeForSel = (type) ->
   ids = []
   $('.paragraphs.select').each (i, e) =>
-    for index in [0..20]
-      e.classList.remove "paragraphsType_#{index}"
+    # e.classList.remove "paragraphsType_#{index}"
+    $(e).attr('class', (i, cls) -> cls.replace(/paragraphsType_\d+ /g, ''))
     e.classList.add "paragraphsType_#{type}"
     ids.push e.id.split('_')[1]
+    $(e).removeClass('select')
   ids.join(',')
   jsObj.setParagraphsType(type, ids)
 

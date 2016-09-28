@@ -1,7 +1,49 @@
 p:hover{
-  background: rgba(222, 222, 222, 0.5);
+  background: rgba(222, 222, 222, 0.5)!important;
   cursor: pointer;
 }
 p.select{
-  background: rgba(81, 48, 130, 0.4);
+  background: rgba(81, 48, 130, 0.4)!important;
+}
+p.paragraphsType_-1{
+ background: #9ACD32;
+}
+p.paragraphsType_0{
+ background: #698B22;
+}
+p.paragraphsType_1{
+ background: #CAFF70;
+}
+p.paragraphsType_2{
+ background: #BCEE68;
+}
+p.paragraphsType_100{
+ background: #A2CD5A;
+}
+p.paragraphsType_101{
+ background: #6E8B3D;
+}
+p.paragraphsType_102{
+ background: #FFF68F;
+}
+p.paragraphsType_200{
+ background: #EEE685;
+}
+p.paragraphsType_201{
+ background: #CDC673;
+}
+p.paragraphsType_202{
+ background: #8B864E;
+}
+p.paragraphsType_203{
+ background: #FFEC8B;
+}
+p.paragraphsType_204{
+ background: #EEDC82;
+}
+p.paragraphsType_205{
+ background: #CDBE70;
+}
+p.paragraphsType_206{
+ background: #8B814C;
 }

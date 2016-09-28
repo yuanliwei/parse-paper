@@ -1,6 +1,8 @@
 package com.ylw.parsepaper.ui.view;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
@@ -12,6 +14,7 @@ import com.ylw.parsepaper.logic.utils.FileUtil;
 import com.ylw.parsepaper.logic.utils.PropUtils;
 import com.ylw.parsepaper.ui.MainApp;
 import com.ylw.parsepaper.ui.controller.BaseController;
+import com.ylw.parsepaper.ui.model.ColorMap;
 import com.ylw.parsepaper.ui.model.ListItemData;
 
 import javafx.animation.FadeTransition;
@@ -33,7 +36,11 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.FileChooser;
@@ -68,7 +75,17 @@ public class MainAppController extends BaseController {
 
 	@Override
 	protected void initialize() {
-		data.add(new ListItemData("T_PAPER_大标题", "addTypeForSel({0})", Part.T_PAPER_大标题));
+		data.add(new ListItemData(Part.T_PAPER_大标题, "T_PAPER_大标题"));
+		data.add(new ListItemData(Part.T_PAPER_说明文本, "T_PAPER_说明文本"));
+		data.add(new ListItemData(Part.T_BIG_选择题, "T_BIG_选择题"));
+		data.add(new ListItemData(Part.T_BIG_解答题, "T_BIG_解答题"));
+		data.add(new ListItemData(Part.T_SMALL_题干, "T_SMALL_题干"));
+		data.add(new ListItemData(Part.T_SMALL_选项, "T_SMALL_选项"));
+		data.add(new ListItemData(Part.T_SMALL_答案, "T_SMALL_答案"));
+		data.add(new ListItemData(Part.T_SMALL_解析, "T_SMALL_解析"));
+		data.add(new ListItemData(Part.T_SMALL_点评, "T_SMALL_点评"));
+		data.add(new ListItemData(Part.T_SMALL_难度, "T_SMALL_难度"));
+
 		data.add(new ListItemData("alert", "alert('hello')"));
 		data.add(new ListItemData("initView", "window.initView()"));
 		data.add(new ListItemData("log", "mlog('helllo      jjjh')"));
@@ -93,13 +110,27 @@ public class MainAppController extends BaseController {
 
 	class ButtonCell extends ListCell<ListItemData> {
 		Button button;
+		HBox hBox;
+		Rectangle r;
 
 		public ButtonCell() {
 			super();
+			hBox = new HBox();
 			button = new Button();
+			HBox.setHgrow(button, Priority.ALWAYS);
+			button.setPrefHeight(30);
 			button.setTextAlignment(TextAlignment.LEFT);
 			button.setAlignment(Pos.BASELINE_LEFT);
-			button.setPrefWidth(listView.getPrefWidth() - 20);
+			button.setPrefWidth(listView.getPrefWidth() - 45);
+
+			r = new Rectangle();
+			r.setWidth(20);
+			r.setHeight(20);
+			r.setArcWidth(3);
+			r.setArcHeight(3);
+			r.setStroke(Color.web("red", 0.86));
+			HBox.setMargin(r, new Insets(5, 5, 5, 0));
+			hBox.getChildren().addAll(r, button);
 		}
 
 		@Override
@@ -107,10 +138,15 @@ public class MainAppController extends BaseController {
 			super.updateItem(item, empty);
 			if (!empty) {
 				button.setText(item.getName());
+				if (item.getType() != -1) {
+					r.setFill(ColorMap.c(item.getType()));
+				} else {
+					r.setFill(Color.web("rgb(222,222,222)", 0.01));
+				}
 				button.setOnAction(value -> {
 					mainApp.mainViewController.exec(item.getJsData());
 				});
-				setGraphic(button);
+				setGraphic(hBox);
 			}
 		}
 	}

@@ -17,10 +17,13 @@ public class PaperEngine {
 	public void parse(List<HtmlParagraph> ps) {
 		this.paragraph = ps;
 		partEngine.parse(ps);
+		elementEngine.parse(partEngine.parts);
 	}
 
 	public List<Part> getAllChoice() {
 		List<Part> choiceParts = new ArrayList<>();
+		
+		
  		int fromIndex;
 		int toIndex;
 		
@@ -39,6 +42,7 @@ public class PaperEngine {
 //			}
 //		});
 //		choiceParts.addAll(partEngine.parts.subList(p.x, p.y));
-		return choiceParts;
+//		return choiceParts;
+		return elementEngine.choiceParts;
 	}
 }
