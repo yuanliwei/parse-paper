@@ -52,6 +52,7 @@ public class ColorMap {
 		colorMap.put(Part.T_BIG, cStr[i++]);
 		colorMap.put(Part.T_BIG_选择题, cStr[i++]);
 		colorMap.put(Part.T_BIG_解答题, cStr[i++]);
+		colorMap.put(Part.T_BIG_填空题, cStr[i++]);
 		colorMap.put(Part.T_SMALL, cStr[i++]);
 		colorMap.put(Part.T_SMALL_题干, cStr[i++]);
 		colorMap.put(Part.T_SMALL_选项, cStr[i++]);
@@ -59,6 +60,8 @@ public class ColorMap {
 		colorMap.put(Part.T_SMALL_解析, cStr[i++]);
 		colorMap.put(Part.T_SMALL_点评, cStr[i++]);
 		colorMap.put(Part.T_SMALL_难度, cStr[i++]);
+		colorMap.put(Part.T_SMALL_阅读材料, cStr[i++]);
+		colorMap.put(Part.T_SMALL_问题, cStr[i++]);
 	}
 
 	public static Color c(ListItemData item) {

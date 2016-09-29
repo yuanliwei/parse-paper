@@ -1,6 +1,7 @@
 package com.ylw.parsepaper.ui.controller;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -9,8 +10,10 @@ import org.apache.commons.lang3.text.StrBuilder;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.ylw.parsepaper.logic.db.TextTypeValue;
 import com.ylw.parsepaper.logic.html.model.HtmlParagraph;
 import com.ylw.parsepaper.logic.paper.model.PartType;
+import com.ylw.parsepaper.logic.utils.ormliteutils.OrmLiteUtils;
 import com.ylw.parsepaper.ui.MainApp;
 
 public class JSInterface {
@@ -37,19 +40,38 @@ public class JSInterface {
 	public void setParagraphsType(int type, String indexStr) {
 		log.debug("setParagraphsType type : " + type + " " + indexStr);
 		List<HtmlParagraph> ps = mainApp.mainAppController.parseMain.simpleHtmlEngine.getParagraphs();
+		List<TextTypeValue> typeValues = new ArrayList<>();
 		// 4,7,8,10,13
 		Arrays.asList(indexStr.split(",")).forEach(num -> {
 			if (StringUtils.isNoneBlank(num)) {
-				ps.get(Integer.valueOf(num)).type = PartType.get(type);
+				HtmlParagraph p = ps.get(Integer.valueOf(num));
+				p.type = PartType.get(type);
+				log.debug(p.text);
+				typeValues.add(new TextTypeValue(p.type, p.text));
 			}
 		});
-
+		OrmLiteUtils.saveOrUpdateAll(typeValues);
 		StrBuilder strBuilder = new StrBuilder();
 		ps.forEach((p) -> {
 			strBuilder.append(MessageFormat.format("\n\t{0} - {1}", p.index, p.type));
 		});
 		strBuilder.append("\n");
-//		log.debug(strBuilder.toString());
+		// log.debug(strBuilder.toString());
+		mainApp.mainAppController.parseMain.parsePaperStruct();
+	}
+	public void getParagraphsTypeStr() {
+		log.debug("getParagraphsType " );
+		List<HtmlParagraph> ps = mainApp.mainAppController.parseMain.simpleHtmlEngine.getParagraphs();
+		
+		
+		
+		StrBuilder strBuilder = new StrBuilder();
+		ps.forEach((p) -> {
+			strBuilder.append(p.type.value).append(",");
+		});
+		strBuilder.deleteCharAt(strBuilder.length());
+		strBuilder.append("\n");
+		// log.debug(strBuilder.toString());
 		mainApp.mainAppController.parseMain.parsePaperStruct();
 	}
 }

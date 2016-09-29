@@ -39,7 +39,7 @@ public class ColorMapTest {
 		StrBuilder strBuilder = new StrBuilder();
 
 		map.forEach((type, color) -> {
-			strBuilder.append("p.paragraphsType_").append(type).append("{\n");
+			strBuilder.append("p.paragraphsType_").append(type.value).append("{\n");
 			strBuilder.append("\tbackground: ").append(color).append(";\n");
 			strBuilder.append("}\n");
 		});
