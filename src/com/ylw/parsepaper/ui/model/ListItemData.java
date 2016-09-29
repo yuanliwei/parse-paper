@@ -2,7 +2,7 @@ package com.ylw.parsepaper.ui.model;
 
 import java.text.MessageFormat;
 
-import com.ylw.parsepaper.logic.paper.model.Part;
+import com.ylw.parsepaper.logic.paper.model.PartType;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -52,6 +52,13 @@ public class ListItemData {
 		this.type = type;
 		this.name = new SimpleStringProperty(name);
 		this.jsData = MessageFormat.format("addTypeForSel({0})", type);
+	}
+
+	// Part.T_PAPER_大标题, "T_PAPER_大标题", "addTypeForSel({0})", Part.T_PAPER_大标题
+	public ListItemData(PartType type) {
+		this.type = type.value;
+		this.name = new SimpleStringProperty(type.name);
+		this.jsData = MessageFormat.format("addTypeForSel({0})", type.value);
 	}
 
 	public String getName() {

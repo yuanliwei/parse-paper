@@ -10,6 +10,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.ylw.parsepaper.logic.html.model.HtmlParagraph;
+import com.ylw.parsepaper.logic.paper.model.PartType;
 import com.ylw.parsepaper.ui.MainApp;
 
 public class JSInterface {
@@ -39,7 +40,7 @@ public class JSInterface {
 		// 4,7,8,10,13
 		Arrays.asList(indexStr.split(",")).forEach(num -> {
 			if (StringUtils.isNoneBlank(num)) {
-				ps.get(Integer.valueOf(num)).type = type;
+				ps.get(Integer.valueOf(num)).type = PartType.get(type);
 			}
 		});
 
@@ -48,7 +49,8 @@ public class JSInterface {
 			strBuilder.append(MessageFormat.format("\n\t{0} - {1}", p.index, p.type));
 		});
 		strBuilder.append("\n");
-		log.debug(strBuilder.toString());
+//		log.debug(strBuilder.toString());
+		mainApp.mainAppController.parseMain.parsePaperStruct();
 	}
 }
 /*

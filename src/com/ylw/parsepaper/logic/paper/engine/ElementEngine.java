@@ -26,6 +26,7 @@ public class ElementEngine {
 
 			}
 		}
-		return parts.subList(fromIndex, toIndex);
+		return parts;// .subList(fromIndex, toIndex);
 	}
+
 }
