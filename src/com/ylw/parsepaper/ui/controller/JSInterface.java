@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.StrBuilder;
 import org.apache.commons.logging.Log;
@@ -47,7 +48,7 @@ public class JSInterface {
 				HtmlParagraph p = ps.get(Integer.valueOf(num));
 				p.type = PartType.get(type);
 				log.debug(p.text);
-				typeValues.add(new TextTypeValue(p.type, p.text));
+				typeValues.add(new TextTypeValue(p.type, StringEscapeUtils.unescapeHtml4(p.text)));
 			}
 		});
 		OrmLiteUtils.saveOrUpdateAll(typeValues);
@@ -59,20 +60,19 @@ public class JSInterface {
 		// log.debug(strBuilder.toString());
 		mainApp.mainAppController.parseMain.parsePaperStruct();
 	}
-	public void getParagraphsTypeStr() {
-		log.debug("getParagraphsType " );
+
+	public String loadParagraphsTypeStr() {
+		log.debug("loadParagraphsTypeStr ");
 		List<HtmlParagraph> ps = mainApp.mainAppController.parseMain.simpleHtmlEngine.getParagraphs();
-		
-		
-		
+
 		StrBuilder strBuilder = new StrBuilder();
 		ps.forEach((p) -> {
 			strBuilder.append(p.type.value).append(",");
 		});
-		strBuilder.deleteCharAt(strBuilder.length());
-		strBuilder.append("\n");
-		// log.debug(strBuilder.toString());
-		mainApp.mainAppController.parseMain.parsePaperStruct();
+		strBuilder.deleteCharAt(strBuilder.length() - 1);
+		log.debug(strBuilder.toString());
+		return strBuilder.toString();
+		// mainApp.mainAppController.parseMain.parsePaperStruct();
 	}
 }
 /*

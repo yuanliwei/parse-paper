@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import com.ylw.parsepaper.logic.db.TextTypeValue;
 import com.ylw.parsepaper.logic.html.model.HtmlParagraph;
 import com.ylw.parsepaper.logic.paper.model.Part;
@@ -19,8 +21,12 @@ public class BrainEngine {
 			map.put(action.getGuid(), action);
 		});
 		ps.forEach((p) -> {
-			TextTypeValue typeValue = new TextTypeValue(Part.T_TYPE_NONE, p.text);
-			p.type = typeValue.getPartType();
+			TextTypeValue typeValue = new TextTypeValue(Part.T_TYPE_NONE, StringEscapeUtils.unescapeHtml4(p.text));
+			if (map.containsKey(typeValue.getGuid())) {
+				p.type = map.get(typeValue.getGuid()).getPartType();
+			} else {
+				p.type = typeValue.getPartType();
+			}
 		});
 	}
 
