@@ -64,10 +64,6 @@ initView = function() {
   });
 };
 
-$(document).ready(function() {
-  return onPageLoaded();
-});
-
 addIdForAllParagraphs = function() {
   var c, d;
   d = $('div.container');

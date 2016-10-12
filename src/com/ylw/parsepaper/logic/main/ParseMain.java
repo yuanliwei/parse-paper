@@ -63,7 +63,7 @@ public class ParseMain {
 
 	}
 
-	private void parsePaper() {
+	public void parsePaper() {
 		List<HtmlParagraph> ps = simpleHtmlEngine.getParagraphs();
 
 		brainEngine.guessParagraphType(ps);
@@ -121,8 +121,6 @@ public class ParseMain {
 		FileUtil.saveFullPathFile(formatHtmlPath, htmlPage);
 		log.debug("parseHtmlText.");
 		
-		//TODO ?????
-//		parsePaper();
 	}
 
 	public String getHtmlPath() {

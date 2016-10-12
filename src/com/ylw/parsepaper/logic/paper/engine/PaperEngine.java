@@ -2,7 +2,9 @@ package com.ylw.parsepaper.logic.paper.engine;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.text.StrBuilder;
 import org.apache.commons.logging.Log;
@@ -10,6 +12,7 @@ import org.apache.commons.logging.LogFactory;
 
 import com.ylw.parsepaper.logic.html.model.HtmlParagraph;
 import com.ylw.parsepaper.logic.paper.model.Part;
+import com.ylw.parsepaper.logic.paper.model.PartType;
 
 public class PaperEngine {
 	private static Log log = LogFactory.getLog(PaperEngine.class);
@@ -19,6 +22,12 @@ public class PaperEngine {
 	public PartEngine partEngine = new PartEngine();
 
 	private List<HtmlParagraph> paragraph;
+	private Map<PartType, List<HtmlParagraph>> queMap;
+
+	public PaperEngine() {
+		super();
+		queMap = new HashMap<>();
+	}
 
 	public void parse(List<HtmlParagraph> ps) {
 		this.paragraph = ps;
@@ -31,6 +40,23 @@ public class PaperEngine {
 		log.debug("partEngine.parts.type : " + strBuilder.toString());
 
 		elementEngine.parse(partEngine.parts);
+
+		parseBigType(ps);
+	}
+
+	/**
+	 * 按大题型区分段落
+	 * 
+	 * @param ps
+	 */
+	private void parseBigType(List<HtmlParagraph> ps) {
+		for (int i = 0; i < ps.size(); i++) {
+			HtmlParagraph p = ps.get(i);
+			if (PartType.isBigType(p)) {
+
+			}
+		}
+
 	}
 
 	public List<Part> getAllChoice() {

@@ -72,7 +72,6 @@ public class JSInterface {
 		strBuilder.deleteCharAt(strBuilder.length() - 1);
 		log.debug(strBuilder.toString());
 		return strBuilder.toString();
-		// mainApp.mainAppController.parseMain.parsePaperStruct();
 	}
 }
 /*

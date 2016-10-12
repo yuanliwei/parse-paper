@@ -45,7 +45,7 @@ initView = ()->
     # $(p).addClass("select")
     $(p).toggleClass("select")
 
-$(document).ready ()-> onPageLoaded()
+# $(document).ready ()-> onPageLoaded()
 
 
 # 给所有的段落加上索引id

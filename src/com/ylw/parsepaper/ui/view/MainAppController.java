@@ -329,6 +329,7 @@ public class MainAppController extends BaseController {
 			FileUtil.saveFullPathFile(outPath, result);
 			// 重新解析html，解析完后重新加载网页
 			parseMain.parseHtmlText(result, parseMain.getHtmlPath());
+			parseMain.parsePaper();
 			mainApp.mainViewController.load(parseMain.getHtmlPath());
 		}
 		if (!save) {
