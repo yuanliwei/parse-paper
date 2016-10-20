@@ -1,8 +1,6 @@
 package com.ylw.parsepaper.ui.view;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
@@ -75,16 +73,19 @@ public class MainAppController extends BaseController {
 
 	@Override
 	protected void initialize() {
-		data.add(new ListItemData(Part.T_PAPER_大标题, "T_PAPER_大标题"));
-		data.add(new ListItemData(Part.T_PAPER_说明文本, "T_PAPER_说明文本"));
-		data.add(new ListItemData(Part.T_BIG_选择题, "T_BIG_选择题"));
-		data.add(new ListItemData(Part.T_BIG_解答题, "T_BIG_解答题"));
-		data.add(new ListItemData(Part.T_SMALL_题干, "T_SMALL_题干"));
-		data.add(new ListItemData(Part.T_SMALL_选项, "T_SMALL_选项"));
-		data.add(new ListItemData(Part.T_SMALL_答案, "T_SMALL_答案"));
-		data.add(new ListItemData(Part.T_SMALL_解析, "T_SMALL_解析"));
-		data.add(new ListItemData(Part.T_SMALL_点评, "T_SMALL_点评"));
-		data.add(new ListItemData(Part.T_SMALL_难度, "T_SMALL_难度"));
+		data.add(new ListItemData(Part.T_PAPER_大标题));
+		data.add(new ListItemData(Part.T_PAPER_说明文本));
+		data.add(new ListItemData(Part.T_BIG_选择题));
+		data.add(new ListItemData(Part.T_BIG_解答题));
+		data.add(new ListItemData(Part.T_BIG_填空题));
+		data.add(new ListItemData(Part.T_SMALL_题干));
+		data.add(new ListItemData(Part.T_SMALL_选项));
+		data.add(new ListItemData(Part.T_SMALL_答案));
+		data.add(new ListItemData(Part.T_SMALL_解析));
+		data.add(new ListItemData(Part.T_SMALL_点评));
+		data.add(new ListItemData(Part.T_SMALL_难度));
+		data.add(new ListItemData(Part.T_SMALL_阅读材料));
+		data.add(new ListItemData(Part.T_SMALL_问题));
 
 		data.add(new ListItemData("alert", "alert('hello')"));
 		data.add(new ListItemData("initView", "window.initView()"));
@@ -139,7 +140,7 @@ public class MainAppController extends BaseController {
 			if (!empty) {
 				button.setText(item.getName());
 				if (item.getType() != -1) {
-					r.setFill(ColorMap.c(item.getType()));
+					r.setFill(ColorMap.c(item));
 				} else {
 					r.setFill(Color.web("rgb(222,222,222)", 0.01));
 				}
@@ -204,6 +205,7 @@ public class MainAppController extends BaseController {
 				int iterations = 0;
 				parseMain = new ParseMain();
 				parseMain.parse(selectedFile.getAbsolutePath());
+
 				return iterations;
 			}
 
@@ -225,7 +227,13 @@ public class MainAppController extends BaseController {
 			@Override
 			protected void failed() {
 				super.failed();
+				log.error(getException().getMessage(), getException());
 				updateMessage("Failed!");
+				stackPane.getChildren().removeAll(progressBar, progressIndicator, htmlEditor);
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.titleProperty().set(getMessage());
+				alert.headerTextProperty().set(getException().getMessage());
+				alert.showAndWait();
 			}
 		};
 		progressBar.progressProperty().bind(task.progressProperty());
@@ -321,6 +329,7 @@ public class MainAppController extends BaseController {
 			FileUtil.saveFullPathFile(outPath, result);
 			// 重新解析html，解析完后重新加载网页
 			parseMain.parseHtmlText(result, parseMain.getHtmlPath());
+			parseMain.parsePaper();
 			mainApp.mainViewController.load(parseMain.getHtmlPath());
 		}
 		if (!save) {

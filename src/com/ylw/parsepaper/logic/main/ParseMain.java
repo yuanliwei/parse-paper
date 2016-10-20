@@ -11,6 +11,7 @@ import org.apache.commons.logging.LogFactory;
 import com.ylw.parsepaper.logic.html.engine.FormatHtmlEngine;
 import com.ylw.parsepaper.logic.html.engine.SimpleHtmlEngine;
 import com.ylw.parsepaper.logic.html.model.HtmlParagraph;
+import com.ylw.parsepaper.logic.paper.engine.BrainEngine;
 import com.ylw.parsepaper.logic.paper.engine.PaperEngine;
 import com.ylw.parsepaper.logic.utils.CacheUtil;
 import com.ylw.parsepaper.logic.utils.FileUtil;
@@ -21,6 +22,7 @@ public class ParseMain {
 	public SimpleHtmlEngine simpleHtmlEngine = new SimpleHtmlEngine();
 	public FormatHtmlEngine formatHtmlEngine = new FormatHtmlEngine();
 	public PaperEngine paperEngine = new PaperEngine();
+	public BrainEngine brainEngine = new BrainEngine();
 
 	private String resultPath;
 
@@ -61,11 +63,17 @@ public class ParseMain {
 
 	}
 
-	private void parsePaper() {
+	public void parsePaper() {
 		List<HtmlParagraph> ps = simpleHtmlEngine.getParagraphs();
+
+		brainEngine.guessParagraphType(ps);
+
 		paperEngine.parse(ps);
+
+		brainEngine.guessPartType(paperEngine.partEngine.parts);
 	}
 
+	// TODO 可能没用了
 	public void parsePaperStruct() {
 		List<HtmlParagraph> ps = simpleHtmlEngine.getParagraphs();
 		paperEngine.parse(ps);
@@ -91,6 +99,7 @@ public class ParseMain {
 	}
 
 	public void parseHtml(String htmlPath, String formatHtmlPath) {
+		log.debug("parseHtml.");
 		String html = FileUtil.getString(htmlPath, "GBK");
 		if (StringUtils.isBlank(html)) {
 			throw new IllegalStateException("未找到资源文件：" + htmlPath);
@@ -101,6 +110,7 @@ public class ParseMain {
 	}
 
 	public void parseHtmlText(String html, String formatHtmlPath) {
+		log.debug("parseHtmlText.");
 		simpleHtmlEngine.parse(html);
 
 		formatHtmlEngine.parseStyles(simpleHtmlEngine.getStyle());
@@ -109,6 +119,8 @@ public class ParseMain {
 		String htmlPage = formatHtmlEngine.getHtmlPage();
 
 		FileUtil.saveFullPathFile(formatHtmlPath, htmlPage);
+		log.debug("parseHtmlText.");
+		
 	}
 
 	public String getHtmlPath() {

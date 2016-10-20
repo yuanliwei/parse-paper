@@ -1,5 +1,8 @@
 package com.ylw.parsepaper.ui.view;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.ylw.parsepaper.ui.MainApp;
 import com.ylw.parsepaper.ui.controller.BaseController;
 import com.ylw.parsepaper.ui.controller.JSInterface;
@@ -13,6 +16,8 @@ import javafx.scene.web.WebView;
 import netscape.javascript.JSObject;
 
 public class MainViewController extends BaseController {
+	private static Log log = LogFactory.getLog(MainViewController.class);
+
 	@FXML
 	WebView webView;
 	private MainApp mainApp;
@@ -64,6 +69,7 @@ public class MainViewController extends BaseController {
 	}
 
 	public void exec(String jsData) {
+		log.debug("exec : " + jsData);
 		webEngine.executeScript(jsData);
 	}
 

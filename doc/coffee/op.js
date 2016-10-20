@@ -1,4 +1,4 @@
-var addIdForAllParagraphs, addTypeForSel, getAllSels, initJsObj, initView, onPageLoaded, onerror;
+var addIdForAllParagraphs, addTypeForSel, getAllSels, initJsObj, initView, loadParagraphsTypes, onPageLoaded, onerror;
 
 onPageLoaded = function() {
   var error, error1;
@@ -24,7 +24,7 @@ addTypeForSel = function(type) {
   $('.paragraphs.select').each((function(_this) {
     return function(i, e) {
       $(e).attr('class', function(i, cls) {
-        return cls.replace(/paragraphsType_\d+ /g, '');
+        return cls.replace(/paragraphsType_-?\d+ /g, '');
       });
       e.classList.add("paragraphsType_" + type);
       ids.push(e.id.split('_')[1]);
@@ -46,6 +46,7 @@ getAllSels = function() {
 
 initView = function() {
   addIdForAllParagraphs();
+  loadParagraphsTypes();
   return $('p').click(function(e) {
     var dt, p;
     console.log("click.....");
@@ -63,10 +64,6 @@ initView = function() {
   });
 };
 
-$(document).ready(function() {
-  return onPageLoaded();
-});
-
 addIdForAllParagraphs = function() {
   var c, d;
   d = $('div.container');
@@ -77,8 +74,28 @@ addIdForAllParagraphs = function() {
   });
 };
 
+loadParagraphsTypes = function() {
+  var error, error1, typeStr, types;
+  typeStr = jsObj.loadParagraphsTypeStr();
+  types = typeStr.split(',');
+  try {
+    return $('.paragraphs').each((function(_this) {
+      return function(i, e) {
+        return e.classList.add("paragraphsType_" + types[i]);
+      };
+    })(this));
+  } catch (error1) {
+    error = error1;
+    mlog("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+    mlog(error.stack);
+    mlog("t size " + types.length);
+    mlog("p size " + ($('.paragraphs').length));
+    return mlog("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+  }
+};
+
 onerror = function(e) {
-  return alert("JS 发生错误！");
+  return alert("JS 发生错误！" + e.stack);
 };
 
 initJsObj = function() {
@@ -86,7 +103,10 @@ initJsObj = function() {
   jsObj.log = function(msg) {
     return console.log(msg);
   };
-  return jsObj.setParagraphsType = function(type, indexStr) {
+  jsObj.setParagraphsType = function(type, indexStr) {
     return console.log("setParagraphsType type : " + type + " " + indexStr);
+  };
+  return jsObj.loadParagraphsTypeStr = function() {
+    return '1,1,2,2,2,2,2,101,101,207,201,202,202,202,202,201,202,202,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1';
   };
 };

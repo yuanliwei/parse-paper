@@ -5,6 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import org.htmlparser.Node;
 
 import com.ylw.parsepaper.logic.paper.model.Part;
+import com.ylw.parsepaper.logic.paper.model.PartType;
 
 public class HtmlParagraph {
 	private static Log log = LogFactory.getLog(HtmlParagraph.class);
@@ -16,7 +17,7 @@ public class HtmlParagraph {
 	public int tLength; // 纯文本的长度
 	public int hLength; // html的长度
 	public int index; // 段落的索引号
-	public int type; // 段落的类型   = Part.T_XXXX
+	public PartType type; // 段落的类型   = Part.T_XXXX
 	public int textStartPos;
 	public int textEndPos;
 

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.ylw.parsepaper.logic.paper.model.Part;
+import com.ylw.parsepaper.logic.paper.model.PartType;
 
 import javafx.scene.paint.Color;
 
@@ -41,7 +42,7 @@ public class ColorMap {
 			+ "#EED2EE,#CDB5CD,#8B7B8B,#1C1C1C,#363636,#4F4F4F,#696969,"
 			+ "#828282,#9C9C9C,#B5B5B5,#CFCFCF,#E8E8E8,#A9A9A9,#00008B," + "#008B8B,#8B008B,#8B0000,#B4CDCD,#90EE90")
 					.split(",");
-	public static Map<Integer, String> colorMap = new HashMap<>();
+	public static Map<PartType, String> colorMap = new HashMap<>();
 	static {
 		int i = 50;
 		colorMap.put(Part.T_TYPE_NONE, cStr[i++]);
@@ -51,6 +52,7 @@ public class ColorMap {
 		colorMap.put(Part.T_BIG, cStr[i++]);
 		colorMap.put(Part.T_BIG_选择题, cStr[i++]);
 		colorMap.put(Part.T_BIG_解答题, cStr[i++]);
+		colorMap.put(Part.T_BIG_填空题, cStr[i++]);
 		colorMap.put(Part.T_SMALL, cStr[i++]);
 		colorMap.put(Part.T_SMALL_题干, cStr[i++]);
 		colorMap.put(Part.T_SMALL_选项, cStr[i++]);
@@ -58,10 +60,12 @@ public class ColorMap {
 		colorMap.put(Part.T_SMALL_解析, cStr[i++]);
 		colorMap.put(Part.T_SMALL_点评, cStr[i++]);
 		colorMap.put(Part.T_SMALL_难度, cStr[i++]);
+		colorMap.put(Part.T_SMALL_阅读材料, cStr[i++]);
+		colorMap.put(Part.T_SMALL_问题, cStr[i++]);
 	}
 
-	public static Color c(int type) {
-		String color = colorMap.get(type);
+	public static Color c(ListItemData item) {
+		String color = colorMap.get(PartType.get(item.getType()));
 		if (color != null) {
 			return Color.web(color);
 		} else {
@@ -69,8 +73,8 @@ public class ColorMap {
 		}
 	}
 
-	public static String cString(int type) {
-		String color = colorMap.get(type);
+	public static String cString(ListItemData item) {
+		String color = colorMap.get(PartType.get(item.getType()));
 		if (color != null) {
 			return (color);
 		} else {

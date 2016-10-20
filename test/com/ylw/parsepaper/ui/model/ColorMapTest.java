@@ -11,6 +11,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.ylw.parsepaper.logic.paper.model.PartType;
+
 public class ColorMapTest {
 	private static Log log = LogFactory.getLog(ColorMapTest.class);
 
@@ -33,11 +35,11 @@ public class ColorMapTest {
 	@Test
 	public void test() {
 		// "paragraphsType_#{type}"
-		Map<Integer, String> map = ColorMap.colorMap;
+		Map<PartType, String> map = ColorMap.colorMap;
 		StrBuilder strBuilder = new StrBuilder();
 
 		map.forEach((type, color) -> {
-			strBuilder.append("p.paragraphsType_").append(type).append("{\n");
+			strBuilder.append("p.paragraphsType_").append(type.value).append("{\n");
 			strBuilder.append("\tbackground: ").append(color).append(";\n");
 			strBuilder.append("}\n");
 		});
