@@ -25,14 +25,10 @@ public class PartType {
 		return t;
 	}
 
-	// @Override
-	// public boolean equals(Object obj) {
-	// // TODO Auto-generated method stub
-	// return super.equals(obj);
-	// }
-
 	public static boolean isBigType(HtmlParagraph p) {
-		if (Part.T_PAPER_大标题.equals(p.type) || Part.T_BIG_填空题.equals(p.type) || Part.T_BIG_解答题.equals(p.type)
+		if (Part.T_PAPER_大标题.equals(p.type)     
+				|| Part.T_BIG_填空题.equals(p.type)   
+				|| Part.T_BIG_解答题.equals(p.type)
 				|| Part.T_BIG_选择题.equals(p.type))
 			return true;
 		return false;
