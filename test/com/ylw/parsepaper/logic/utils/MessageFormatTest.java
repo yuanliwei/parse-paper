@@ -92,7 +92,7 @@ String templ = "'{\n" +
        "'}";
 String result1 = MessageFormat.format(templ, new Object[]{"booooookId","BOOKNNNNNNAME",2,34,new Date(),3.5,34,"{},{},{}"});
 System.out.println(result1);
-StringUtils.join(elements)
+//StringUtils.join(elements)
 	}
 
 }
