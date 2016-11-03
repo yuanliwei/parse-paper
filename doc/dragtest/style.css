@@ -1,0 +1,43 @@
+body {
+	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+	font-size: 62.5%;
+}
+.draghandle{}
+.headlayout{}
+.labelcontent{
+    padding: 0px;
+    background: green;
+    display: block;
+    height: 26px;
+    opacity: 0.5;
+    width: 100%;
+    cursor: move;
+    text-align: right;
+    margin: 0px;
+    transition: all 500ms ease;
+}
+.labelcontent li{padding: 5px 8px;border-radius: 5px;display: inline-block;list-style-type: none;margin: 2px;cursor: default;background: #58cf19;}
+.labelcontent li .draghandle{
+    display: inline-block;
+    border-radius: 5px;
+}
+.draghandle:hover, .sorthandle:hover{ }
+.contentlayout{
+    /* background: bisque; */
+}
+.clearfloat{
+    clear: both;
+}
+.draggable {}
+.droppable {}
+.base-content{
+    border: solid green;
+    margin: 4px;
+    position: relative;
+    padding-bottom: 30px;
+    box-shadow: 1px 1px 15px rgba(14, 2, 2, 0.15);
+}
+.base-content:hover > .headlayout .labelcontent{
+  opacity: 1;
+  transition: all 1000ms ease;
+}
