@@ -79,7 +79,7 @@ loadParagraphsTypes = function() {
   typeStr = jsObj.loadParagraphsTypeStr();
   types = typeStr.split(',');
   try {
-    return $('.paragraphs').each((function(_this) {
+    $('.paragraphs').each((function(_this) {
       return function(i, e) {
         return e.classList.add("paragraphsType_" + types[i]);
       };
@@ -90,8 +90,9 @@ loadParagraphsTypes = function() {
     mlog(error.stack);
     mlog("t size " + types.length);
     mlog("p size " + ($('.paragraphs').length));
-    return mlog("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+    mlog("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
   }
+  return mlog(jsObj.loadPaperData());
 };
 
 onerror = function(e) {

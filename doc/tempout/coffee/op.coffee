@@ -69,6 +69,8 @@ loadParagraphsTypes = () ->
     mlog "t size #{types.length}"
     mlog "p size #{$('.paragraphs').length}"
     mlog "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+  mlog jsObj.loadPaperData()
+  # mlog JSON.parse jsObj.loadPaperData()
 
 
 onerror = (e) ->

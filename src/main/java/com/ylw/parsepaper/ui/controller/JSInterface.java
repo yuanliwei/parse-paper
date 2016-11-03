@@ -3,8 +3,11 @@ package com.ylw.parsepaper.ui.controller;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.BitSet;
 import java.util.List;
 
+import org.apache.commons.codec.StringDecoder;
+import org.apache.commons.codec.net.URLCodec;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.StrBuilder;
@@ -73,10 +76,29 @@ public class JSInterface {
 		log.debug(strBuilder.toString());
 		return strBuilder.toString();
 	}
-	
+
 	public String loadPaperData(){
+		String paraTempl = "'{'\n" +
+                "            \"index\" : {0},\n" +
+                "            \"text\" : \"{1}\",\n" +
+                "            \"type\" : {2}\n" +
+                "           '}'";
+		String dataTempl = "[{0}]";
+		
+		List<HtmlParagraph> ps = mainApp.mainAppController.parseMain.simpleHtmlEngine.getParagraphs();
+		
 		String json = "";
-		return null;
+		// TODO loadPaperData
+		List<String> paras = new ArrayList<>();
+		for(HtmlParagraph p: ps){
+			String pStr = MessageFormat.format(paraTempl, new Object[]{
+				p.index,
+				StringEscapeUtils.unescapeJson(p.text),
+				p.type.value
+			});
+			paras.add(pStr);
+		}
+		return MessageFormat.format(dataTempl, new Object[] { StringUtils.join(paras, ",") });
 	}
 }
 /*

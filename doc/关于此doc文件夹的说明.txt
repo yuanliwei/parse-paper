@@ -1,0 +1,29 @@
+卷 新加卷 的文件夹 PATH 列表
+卷序列号为 00000018 5AFC:5D4A
+D:.
+├─CSharp_project              把.doc、.docx转换成.html的C#程序
+├─dragtest                    测试jquery-ui的拖拽功能，计划用于编辑试题，比如把几个小题拖到一起作为一个组合题
+│  ├─drag_sample
+│  │  └─layoutit_files      网上找来的拖拽效果示例
+│  └─jquery-ui-1.11.4
+├─parse_paper                 第一阶段做的纯js解析纯文本格式试题的程序，演示网页是demo.html
+│  └─test
+├─tempout                     java程序把word解析成html后的文件保存路径，
+│  ├─coffee
+│  └─Microsoft_Office_Word_97_-_2003___1.files
+├─公式测试                     之前用来测试转换word中的公式用的
+│  ├─genpic
+│  ├─pics
+│  ├─savepics
+│  └─wmf
+└─试卷样例                     试卷的测试数据
+    └─试卷
+        ├─化学（4份）
+        ├─历史（3份）
+        ├─地理（2份）
+        ├─政治（2份）
+        ├─数学（2份）
+        ├─物理（5份）
+        ├─生物（2份）
+        ├─英语（5份）
+        └─语文（2份）
