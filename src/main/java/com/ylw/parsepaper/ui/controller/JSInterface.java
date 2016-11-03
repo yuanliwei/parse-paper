@@ -98,6 +98,7 @@ public class JSInterface {
 			});
 			paras.add(pStr);
 		}
+		// todo 这里搞出来的json数据还有问题
 		return MessageFormat.format(dataTempl, new Object[] { StringUtils.join(paras, ",") });
 	}
 }
