@@ -42,7 +42,6 @@ public class ParseMain {
 			throw new IllegalStateException("文件：\"" + docPath + "\" 不存在。。。。。");
 		}
 
-		
 		String outPath = FileUtil.getCurWorkspacePath() + PropUtils.get("temp_out_path") + "temp.html";
 		FileUtil.delete(outPath);
 
@@ -52,7 +51,7 @@ public class ParseMain {
 			throw new IllegalStateException("文件：\"" + docPath + "\" 没有转换成html");
 		}
 
-		resultPath = PropUtils.get("temp_out_path") + "format" + ".html";
+		resultPath = FileUtil.getCurWorkspacePath() + PropUtils.get("temp_out_path") + "format" + ".html";
 		FileUtil.delete(resultPath);
 
 		parseHtml(outPath, resultPath);
