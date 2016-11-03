@@ -1,0 +1,58 @@
+p:hover{
+  background: rgba(222, 222, 222, 0.5)!important;
+  cursor: pointer;
+}
+p.select{
+  background: rgba(81, 48, 130, 0.4)!important;
+}
+p.paragraphsType_203{
+	background: #EEDC82;
+}
+p.paragraphsType_101{
+	background: #6E8B3D;
+}
+p.paragraphsType_208{
+	background: #CDCDB4;
+}
+p.paragraphsType_2{
+	background: #BCEE68;
+}
+p.paragraphsType_205{
+	background: #8B814C;
+}
+p.paragraphsType_202{
+	background: #FFEC8B;
+}
+p.paragraphsType_100{
+	background: #A2CD5A;
+}
+p.paragraphsType_103{
+	background: #EEE685;
+}
+p.paragraphsType_1{
+	background: #CAFF70;
+}
+p.paragraphsType_0{
+	background: #698B22;
+}
+p.paragraphsType_201{
+	background: #8B864E;
+}
+p.paragraphsType_-1{
+	background: #FFFFFF;
+}
+p.paragraphsType_207{
+	background: #EEEED1;
+}
+p.paragraphsType_204{
+	background: #CDBE70;
+}
+p.paragraphsType_206{
+	background: #FFFFE0;
+}
+p.paragraphsType_102{
+	background: #FFF68F;
+}
+p.paragraphsType_200{
+	background: #CDC673;
+}
