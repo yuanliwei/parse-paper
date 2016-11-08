@@ -80,6 +80,11 @@ public class ParseMainTest {
 		if (!FileUtil.isExistFile(resultPath)) {
 			fail("文件：\"" + outPath + "\" 没有转换成  \"" + resultPath + "\"");
 		}
+		
+		String paperHtml = parseMain.formatHtmlEngine.getAllHtml();
+		FileUtil.saveFullPathFile("C:\\Users\\y\\Desktop\\paperText.thml", paperHtml);
+		String paperText = parseMain.formatHtmlEngine.getAllText("xxxx");
+		FileUtil.saveFullPathFile("C:\\Users\\y\\Desktop\\paperText.txt", paperText);
 
 	}
 

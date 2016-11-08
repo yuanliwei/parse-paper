@@ -31,6 +31,10 @@ public class PaperEngine {
 
 	public void parse(List<HtmlParagraph> ps) {
 		this.paragraph = ps;
+		
+		// 解析试卷大结构 标题 大题号 试题区域 答案区域
+		todo
+		
 		partEngine.parse(ps);
 
 		StrBuilder strBuilder = new StrBuilder();
