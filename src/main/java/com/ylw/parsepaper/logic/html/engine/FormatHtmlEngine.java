@@ -16,7 +16,7 @@ import com.ylw.parsepaper.logic.utils.Res;
  */
 public class FormatHtmlEngine {
 
-	private List<HtmlParagraph> paragraphs;
+	public List<HtmlParagraph> paragraphs;
 	private String style;
 	private String text;
 	private String html;
@@ -32,7 +32,7 @@ public class FormatHtmlEngine {
 		int start = 0;
 		int end = 0;
 		for (HtmlParagraph htmlParagraph : paragraphs) {
-			sbText.append(htmlParagraph.text);
+//			sbText.append(htmlParagraph.text);
 			end = start + htmlParagraph.text.length();
 			htmlParagraph.setTextPostion(start, end);
 			start = end + 1;
