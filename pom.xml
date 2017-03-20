@@ -173,9 +173,31 @@
 			<version>1.12</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.15</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>6.0.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ylw</groupId>
+			<artifactId>excelOrm</artifactId>
+			<version>0.0.8-SNAPSHOT</version>
+		</dependency>
 
 	</dependencies>
 	<repositories>
 
 	</repositories>
+	<dependencyManagement>
+
+	</dependencyManagement>
 </project>
